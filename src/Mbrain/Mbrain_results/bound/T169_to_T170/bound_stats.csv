@@ -1,0 +1,12 @@
+frac,frame,N,frac_in,n_out,expand,csv,png
+T169_to_T170,0,33921,0.9984670263258748,52,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z000.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z000.png
+T169_to_T170,1,33921,0.9990861118481177,31,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z001.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z001.png
+T169_to_T170,2,33921,0.9978479408036319,73,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z002.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z002.png
+T169_to_T170,3,33921,0.9988502697444062,39,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z003.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z003.png
+T169_to_T170,4,33921,0.9981722236962354,62,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z004.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z004.png
+T169_to_T170,5,33921,0.9979363815925238,70,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z005.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z005.png
+T169_to_T170,6,33921,0.9987323486925503,43,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z006.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z006.png
+T169_to_T170,7,33921,0.9989976710592259,34,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z007.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z007.png
+T169_to_T170,8,33921,0.9972583355443531,93,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z008.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z008.png
+T169_to_T170,9,33921,0.9988207894814422,40,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z009.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z009.png
+T169_to_T170,10,33921,0.9988502697444062,39,1.01,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z010.csv,/home/zhouyj/project/src/mouse_results copy/bound/T169_to_T170/bound_z010.png
