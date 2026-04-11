@@ -1,6 +1,6 @@
 # stVirtual
 
-<img width="1408" height="768" alt="46ec5533f7d5d1e59cbd9536e771fdd9" src="https://github.com/user-attachments/assets/10938966-84a7-479a-abd0-f7cfca4d6921" />
+<img width="1280" height="720" alt="幻灯片1" src="https://github.com/user-attachments/assets/97230574-6e20-4eea-9da8-84917e4962bb" />
 
 stVirtual is a computational framework for virtual tissue generation from spatial transcriptomics data. By integrating spatial organization, gene expression, and local niche signals, it supports cross-slice simulation, intermediate tissue reconstruction, and 3D virtual representation of dynamic tissue evolution.
 
