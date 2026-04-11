@@ -19,5 +19,8 @@ stVirtual is a computational framework for virtual tissue generation from spatia
 git clone https://github.com/YjZhou16/stVirtual.git
 cd stVirtual
 pip install -r requirements.txt
+```
 
 ## Data
+Mbrain: https://db.cngb.org/stomics/cbmsta      Mouse1 T167-T171 
+MOSTA: https://db.cngb.org/stomics/mosta       
