@@ -60,12 +60,11 @@ def make_shell_adaptive(
         shell = expand_shell_centroid(shell0, expand)
         frac, out_idx = inside_frac(xy, shell)
         if it > 200: break
-    # 兜底：还不够就 convex（避免被极少数离群点/多团块逼到很大 expand）
     if frac < float(target_frac):
         try:
             shell = convex_shell(xy, expand=float(fallback_expand), n_resample=int(n_resample))
             frac, out_idx = inside_frac(xy, shell)
-            expand = np.nan  # 表示走了 convex fallback
+            expand = np.nan  # convex fallback
         except Exception:
             pass
     return shell, frac, out_idx, expand
