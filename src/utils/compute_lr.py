@@ -27,14 +27,14 @@ def _hill(L, R, KL, KR, n=1.0, eps=1e-8):
 def _prep_lr_pairs(lr_pairs: pd.DataFrame):
     df = lr_pairs.copy()
     # standardize column names
-    assert {"ligand","receptor"}.issubset(df.columns), "lr_pairs 需要包含 'ligand' 和 'receptor' 列"
+    assert {"ligand","receptor"}.issubset(df.columns), "lr_pairs must contain 'ligand' and 'receptor' columns"
     if "sign" in df.columns:
-        # map "+"/"-" → 1/-1
+        # map "+"/"-" to 1/-1
         df["sign"] = df["sign"].map({"+":1, "-":-1}).fillna(df["sign"]).astype(float)
     else:
         df["sign"] = 1.0
     df["weight"] = df.get("weight", 1.0)
-    # default Hill params (可改：也可从表里读 KL/KR/n)
+    # default Hill parameters; KL/KR/n can also be read from the table
     df["KL"] = df.get("KL", 5.0)
     df["KR"] = df.get("KR", 5.0)
     df["hill_n"] = df.get("hill_n", 1.0)
@@ -65,10 +65,10 @@ def compute_lr_potential_per_sample(
     k=16, use_cpm=True,
     hill=True, pair_chunk=64, verbose=False,
     # ---- new: quantile thresholds ----
-    thr_q=0.7,                 # 非零分位数：0.5=中位数，0.7/0.8更严格
-    min_thr=1.0,               # 阈值下限（raw counts 推荐 1.0；TP10k 也可 1~2）
-    klkr_mode="max",           # "max"=max(base, data); "data"=只用data; "base"=只用表里KL/KR
-    scale_target=1e4,          # use_cpm=True 时的目标库容量（TP10k）
+    thr_q=0.7,                 # nonzero quantile: 0.5=median; 0.7/0.8 are stricter
+    min_thr=1.0,               # lower threshold; 1.0 is recommended for raw counts, 1-2 also works for TP10k
+    klkr_mode="max",           # "max"=max(base, data); "data"=data only; "base"=table KL/KR only
+    scale_target=1e4,          # target library size when use_cpm=True (TP10k)
 ):
     import numpy as np
     import pandas as pd
@@ -82,7 +82,7 @@ def compute_lr_potential_per_sample(
 
     def _prep_lr_pairs(df: pd.DataFrame):
         df = df.copy()
-        assert {"ligand", "receptor"}.issubset(df.columns), "lr_pairs 需要包含 ligand/receptor"
+        assert {"ligand", "receptor"}.issubset(df.columns), "lr_pairs must contain ligand/receptor"
         if "sign" in df.columns:
             df["sign"] = df["sign"].map({"+": 1, "-": -1}).fillna(df["sign"]).astype(float)
         else:
@@ -116,8 +116,8 @@ def compute_lr_potential_per_sample(
 
     def _per_gene_nonzero_quantile_scaled(Xs_csr, gene_idx, scale, q, min_thr):
         """
-        对当前 sample 内指定基因集合 gene_idx（全局索引）：
-          thr_g = quantile( (counts*scale)_{:,g} | >0 )
+        For the selected gene set gene_idx (global indices) in the current sample:
+          thr_g = quantile((counts * scale)[:, g] | > 0)
         """
         M = Xs_csr[:, gene_idx].toarray().astype(np.float32)   # (N, Guse)
         M = (M.T * scale).T                                    # scale per cell
@@ -130,8 +130,8 @@ def compute_lr_potential_per_sample(
         return thr
 
     # ---------------- main ----------------
-    assert sample_key in adata.obs, f"obs['{sample_key}'] 不存在"
-    assert coords_key in adata.obsm, f"obsm['{coords_key}'] 不存在"
+    assert sample_key in adata.obs, f"obs['{sample_key}'] not found"
+    assert coords_key in adata.obsm, f"obsm['{coords_key}'] not found"
 
     lrdf0 = _prep_lr_pairs(lr_pairs)
     X = _get_counts(adata, layer=layer)  # CSR
@@ -140,7 +140,7 @@ def compute_lr_potential_per_sample(
     samples = adata.obs[sample_key].astype(str).values
     uniq_samples = pd.unique(samples)
 
-    # gene -> index；过滤不存在的 pair
+    # gene -> index; filter out pairs missing from var_names
     gene_to_idx = {g: i for i, g in enumerate(var)}
     lig_idx, rec_idx, keep = [], [], []
     for r in lrdf0.itertuples():
@@ -155,7 +155,7 @@ def compute_lr_potential_per_sample(
     rec_idx = np.array(rec_idx, dtype=int)
     P = len(lrdf)
     if verbose:
-        print(f"[LR] 有效 LR 配对 {P} 条（在 var_names 中均存在）")
+        print(f"[LR] valid LR pairs: {P} (all present in var_names)")
 
     U_all = np.zeros(adata.n_obs, dtype=np.float32)
 
@@ -202,7 +202,7 @@ def compute_lr_potential_per_sample(
             L_mat = np.clip(L_mat, 0, None)
             R_mat = np.clip(R_mat, 0, None)
 
-            sub = lrdf.iloc[sl]  # 注意：放这里，hill=False 也能用 weight/sign
+            sub = lrdf.iloc[sl]  # keep here so hill=False can still use weight/sign
 
             if hill:
                 KL_base = sub["KL"].to_numpy(np.float32)
@@ -250,7 +250,7 @@ def compute_lr_potential_per_sample(
     adata.obs["LR_potential_z"] = _z_by_sample(U_all, samples)
 
     if verbose:
-        print("[LR] 完成：写入 adata.obs['LR_potential'] 与 'LR_potential_z'")
+        print("[LR] done: wrote adata.obs['LR_potential'] and 'LR_potential_z'")
     return adata
 
 
@@ -320,7 +320,7 @@ def compute_lr_from_decoder(
     lig_idx = np.array(lig_idx, dtype=int)
     rec_idx = np.array(rec_idx, dtype=int)
     P = len(lrdf)
-    if verbose: print(f"[LR] 有效 LR 配对 {P} 条")
+    if verbose: print(f"[LR] valid LR pairs: {P}")
 
     U_all = np.zeros(adata.n_obs, dtype=np.float32)
     U_all_pos = np.zeros_like(U_all)
@@ -406,7 +406,7 @@ def compute_lr_from_decoder(
     adata.obs["LR_potential"]   = U_all
     adata.obs["LR_potential_z"] = _z_by_sample(U_all, samples)
     if verbose:
-        print("[LR] 完成：写入 obs['LR_pos'], ['LR_neg'], ['LR_potential(_z)']")
+        print("[LR] done: wrote obs['LR_pos'], ['LR_neg'], and ['LR_potential(_z)']")
 
     return adata
 
@@ -416,16 +416,16 @@ def knn_self_chunked(
     chunk_size: int = 2048,
 ) -> Tuple[torch.Tensor, torch.Tensor]:
     """
-    在 GPU 上做 self-KNN，但是按 chunk 计算，避免 N×N 距离矩阵一次性占满显存。
+    Compute self-KNN on GPU in chunks to avoid allocating the full N-by-N distance matrix.
 
-    输入:
+    Inputs:
       coords: (N, d) GPU tensor
-      k: 邻居数（不含自己）
-      chunk_size: 每次处理的 cell 数（比如 1024/2048）
+      k: number of neighbors, excluding each point itself
+      chunk_size: number of cells processed per chunk, for example 1024 or 2048
 
-    输出:
-      dist_all: (N, k) 每个点到 k 个近邻的距离
-      idx_all:  (N, k) 每个点近邻的索引
+    Outputs:
+      dist_all: (N, k) distance from each point to its k nearest neighbors
+      idx_all:  (N, k) nearest-neighbor indices for each point
     """
     device = coords.device
     N = coords.shape[0]
@@ -439,11 +439,11 @@ def knn_self_chunked(
             end = min(start + chunk_size, N)
             chunk = coords[start:end]                  # (B, d)
 
-            # (B, N) 距离矩阵，B << N，显存可控
+            # (B, N) distance matrix; B << N keeps memory manageable
             D = torch.cdist(chunk, coords)
 
-            vals, idx = torch.topk(D, k + 1, largest=False)  # 包含自己
-            dist_all[start:end] = vals[:, 1:]                # 去掉自己
+            vals, idx = torch.topk(D, k + 1, largest=False)  # includes self
+            dist_all[start:end] = vals[:, 1:]                # remove self
             idx_all[start:end]  = idx[:, 1:]
 
             del D, vals, idx
@@ -452,8 +452,8 @@ def knn_self_chunked(
     return dist_all, idx_all
 
 def compute_lr_potential_gpu(
-    expr_union_t: torch.Tensor,  # (N, G) decoder 输出的表达，GPU tensor
-    coords_t: torch.Tensor,      # (N, 2) 当前步的归一化坐标，GPU tensor
+    expr_union_t: torch.Tensor,  # (N, G) decoder output expression, GPU tensor
+    coords_t: torch.Tensor,      # (N, 2) normalized coordinates for the current step, GPU tensor
     lr_cfg: Dict[str, torch.Tensor],
     k: int = 16,
     use_cpm: bool = True,
@@ -465,25 +465,25 @@ def compute_lr_potential_gpu(
     knn_chunk_size: int = 2048,
 ) -> torch.Tensor:
     """
-    单 sample 的 GPU 版 LR_potential 计算（分块 KNN 版，不会分配 N×N 距离矩阵）。
+    GPU LR_potential calculation for a single sample using chunked KNN.
 
-    步骤：
-      1）分块 self-KNN 得到 dist,nbr (N,k)
-      2）可选 CPM-like 缩放
-      3）按 LR 配对分 chunk 做 Hill / dot / 加权
+    Steps:
+      1. Compute chunked self-KNN to obtain dist and nbr with shape (N, k).
+      2. Optionally apply CPM-like scaling.
+      3. Process LR pairs in chunks for Hill/dot products and weighting.
     """
     device = expr_union_t.device
     N = expr_union_t.shape[0]
     if N == 0:
         return torch.zeros(0, device=device)
 
-    # ---------- 1) 分块 self-KNN ----------
+    # ---------- 1) chunked self-KNN ----------
     dist, nbr = knn_self_chunked(coords_t, k=k, chunk_size=knn_chunk_size)
-    # sigma 用第 k 个邻居距离，和你原来一样
+    # sigma uses the distance to the kth neighbor, as in the original implementation
     sigma = torch.clamp(dist[:, -1], min=1e-6)        # (N,)
     K = torch.exp(-dist**2 / (2.0 * sigma[:, None]**2))  # (N, k)
 
-    # ---------- 2) CPM-like 库容量缩放 ----------
+    # ---------- 2) CPM-like library-size scaling ----------
     if use_cpm:
         lib = expr_union_t.sum(dim=1).to(torch.float32)  # (N,)
         if lib_clip_q is not None:
@@ -501,7 +501,7 @@ def compute_lr_potential_gpu(
     else:
         scale = torch.ones(N, device=device)
 
-    # ---------- 3) 提取 L/R 表达 ----------
+    # ---------- 3) extract L/R expression ----------
     lig_idx = lr_cfg["lig_idx"]     # (P,)
     rec_idx = lr_cfg["rec_idx"]     # (P,)
     KL      = lr_cfg["KL"]          # (P,)
@@ -522,7 +522,7 @@ def compute_lr_potential_gpu(
         L_mat = L_full[:, start:end]  # (N, p)
         R_mat = R_full[:, start:end]  # (N, p)
 
-        # KNN 组合：L_j(i,邻居,p), R_i(i,1,p)
+        # KNN combination: L_j(i, neighbor, p), R_i(i, 1, p)
         L_j = L_mat[nbr]               # (N, k, p)
         R_i = R_mat.unsqueeze(1)       # (N, 1, p)
 
@@ -582,26 +582,26 @@ def render_lr_potential_smooth(
     sigma_px=None,
     invert_y=True,
     cmap="viridis",
-    obs_out=None,                 # 平滑值写回列名，默认 f"{key}_smooth"
+    obs_out=None,                 # output column for smoothed values; defaults to f"{key}_smooth"
     write_weight=True,
     thin_mask_percentile=5.0,
     show_plot=True,
     verbose=True,
 
     # ---------- NEW: 0-1 normalization ----------
-    norm_out=None,                # 归一化写回列名，默认 f"{obs_out}_01"
+    norm_out=None,                # output column for normalized values; defaults to f"{obs_out}_01"
     norm_mode="minmax",           # "minmax" or "quantile"
-    norm_q=(2.0, 98.0),           # norm_mode="quantile" 时用
+    norm_q=(2.0, 98.0),           # used when norm_mode="quantile"
     norm_scope="per_sample",      # "per_sample" or "global"
-    plot_use_norm=True,           # 画图是否用归一化场
+    plot_use_norm=True,           # whether to plot the normalized field
 ):
     """
-    对每个 sample：
-      1) (x,y,v) -> W_grid / VW_grid
-      2) 高斯平滑 -> W_s / VW_s
-      3) field = VW_s / (W_s + eps)
-      4) 双线性采样写回 obs_out
-      5) NEW: 生成 0-1 归一化列 norm_out，并且画图用 norm_field（可选）
+    For each sample:
+      1. Convert (x, y, v) to W_grid / VW_grid.
+      2. Apply Gaussian smoothing to obtain W_s / VW_s.
+      3. Compute field = VW_s / (W_s + eps).
+      4. Bilinearly sample values back into obs_out.
+      5. Create a 0-1 normalized column norm_out and optionally plot norm_field.
     """
     assert sample_key in adata.obs, f"obs['{sample_key}'] not found"
     if obs_out is None:
@@ -618,7 +618,7 @@ def render_lr_potential_smooth(
         assert xy.shape[1] >= 2, f"obsm['{coords_key}'] must have at least 2 columns"
         x_all, y_all = xy[:, 0], xy[:, 1]
     else:
-        raise ValueError("请提供 obs_xy 或有效的 coords_key 来获取坐标")
+        raise ValueError("Provide obs_xy or a valid coords_key to obtain coordinates")
 
     vals_all = np.asarray(adata.obs[key].values, dtype=float)
     samples  = adata.obs[sample_key].astype(str).values
@@ -665,7 +665,7 @@ def render_lr_potential_smooth(
     global_vmin = np.inf
     global_vmax = -np.inf
 
-    # 第一遍：如果要 global 范围，就先统计 smooth 的范围（按你的 mask 逻辑）
+    # First pass: collect the smooth range for global normalization using the mask logic below
     if norm_scope == "global":
         for sname in uniq_samples:
             m = (samples == sname)
@@ -729,7 +729,7 @@ def render_lr_potential_smooth(
         if not np.isfinite(global_vmin) or not np.isfinite(global_vmax) or global_vmax <= global_vmin + 1e-12:
             global_vmin, global_vmax = 0.0, 1.0
 
-    # 第二遍：正式写回
+    # Second pass: write values back to adata.obs
     for sname in uniq_samples:
         m = (samples == sname)
         x = x_all[m]; y = y_all[m]; v = vals_all[m]
@@ -738,7 +738,7 @@ def render_lr_potential_smooth(
         idx_obs = np.where(m)[0][ok]
         if x.size == 0:
             if verbose:
-                print(f"[warn] sample={sname} 没有有效点，跳过")
+                print(f"[warn] sample={sname} has no valid points; skipping")
             continue
 
         xmin, xmax = x.min(), x.max()
@@ -773,7 +773,7 @@ def render_lr_potential_smooth(
         VW_s = gaussian_filter(VW_grid, sigma=(sigma_y, sigma_x), mode="nearest")
         field = VW_s / (W_s + eps)
 
-        # mask（用于 plot & 用于 quantile norm）
+        # mask used for plotting and quantile normalization
         if (W_s > 0).any():
             th = np.percentile(W_s[W_s > 0], thin_mask_percentile)
             mask = (W_s < th)
@@ -800,15 +800,15 @@ def render_lr_potential_smooth(
 
         # ---- build norm_field for plotting ----
         norm_field = (np.clip(field, vmin, vmax) - vmin) / (vmax - vmin + 1e-12)
-        # 可选：把低密度区域置 NaN（和你原 show_plot 一致）
+        # optionally set low-density regions to NaN, matching the original show_plot behavior
         norm_field_vis = norm_field.copy()
         norm_field_vis[~valid] = np.nan
 
-        # ---- 写回 smooth ----
+        # ---- write smooth values ----
         vals_smooth = _bilinear_sample(field, x, y, xmin, xmax, ymin, ymax)
         adata.obs.iloc[idx_obs, adata.obs.columns.get_loc(obs_out)] = vals_smooth
 
-        # ---- 写回 0-1 ----
+        # ---- write 0-1 normalized values ----
         vals_01 = (np.clip(vals_smooth, vmin, vmax) - vmin) / (vmax - vmin + 1e-12)
         adata.obs.iloc[idx_obs, adata.obs.columns.get_loc(norm_out)] = vals_01
 
@@ -822,8 +822,8 @@ def render_lr_potential_smooth(
             fig_h = fig_w * (H / W)
             fig, ax = plt.subplots(figsize=(fig_w + 0.55, fig_h), dpi=100)
 
-            fig.patch.set_alpha(0)     # 整个 figure 背景透明
-            ax.patch.set_alpha(0)      # 坐标轴背景透明
+            fig.patch.set_alpha(0)     # transparent figure background
+            ax.patch.set_alpha(0)      # transparent axes background
 
             if plot_use_norm:
                 img = norm_field_vis
@@ -853,7 +853,7 @@ def render_lr_potential_smooth(
 
             divider = make_axes_locatable(ax)
             cax = divider.append_axes("right", size="4.5%", pad=0.12)
-            cax.patch.set_alpha(0)     # colorbar 背景也透明
+            cax.patch.set_alpha(0)     # transparent colorbar background
             cb = fig.colorbar(im, cax=cax)
 
             cb.set_label("")
