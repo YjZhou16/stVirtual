@@ -30,8 +30,8 @@ pip install -r requirements.txt
 
 ## Tutorials
 
-* XX : 3D tissue reconstruction using spatial transcriptomics data in mouse brain
-* XX : 3D tissue reconstruction using spatiall proteomics data in human breast cancer
+* Tutorial1 GP1 demo : 3D tissue reconstruction using spatiall proteomics data in human gastric cancer 
+* Tutorial2 Mbrain demo: 3D tissue reconstruction using spatial transcriptomics data in mouse brain
 
 ## Reference
 Zhou Y., ..., Chen L., Zuo, C., Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
