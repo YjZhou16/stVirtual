@@ -328,7 +328,7 @@ The workflow produces several output types:
 
 ## Troubleshooting
 
-- If imports fail, confirm that `PYTHONPATH` contains `/home/zhouyj/stVirtual/src`.
+- If imports fail, confirm that `PYTHONPATH` contains `.../src`.
 - If CUDA is unavailable, verify the NVIDIA driver, CUDA-compatible PyTorch wheel, and `torch.cuda.is_available()`.
 - If `pip install -r requirements.txt` fails on `@ file://` entries, install the same package name and version from conda-forge or PyPI.
 - If a notebook references an absolute path, update it to match your local checkout and data location.
