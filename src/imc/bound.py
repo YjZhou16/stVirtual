@@ -153,8 +153,8 @@ def suggest_alpha_from_knn(xy: np.ndarray, k: int = 10, factor: float = 2.5, n_p
         pts = xy
 
     tree = cKDTree(pts)
-    dists, _ = tree.query(pts, k=min(k + 1, pts.shape[0]))  # 包含自己 0 距离
-    dk = np.median(dists[:, -1])  # 第 k 个邻居
+    dists, _ = tree.query(pts, k=min(k + 1, pts.shape[0]))  
+    dk = np.median(dists[:, -1])  
     R_th = max(float(factor * dk), 1e-6)
     return 1.0 / R_th
 
