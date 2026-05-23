@@ -13,14 +13,6 @@ stVirtual is a computational framework for virtual tissue generation from spatia
 - Flexible modeling framework for developmental and disease studies
 - In silico perturbation analysis
 
-## Installation
-
-```bash
-git clone https://github.com/YjZhou16/stVirtual.git
-cd stVirtual
-pip install -r requirements.txt
-```
-
 ## System requirements
 
 ### Operating system
@@ -57,6 +49,8 @@ Use Python 3.10 or later. The development environment was exported with Python 3
 See `requirements.txt` for the full dependency list and exact versions.
 
 Note: the current `requirements.txt` was exported from a conda-based environment and contains several local `@ file://...` build paths. If `pip` cannot resolve those entries on a new machine, install the named package from conda-forge or PyPI with the same version, or regenerate a clean requirements file from your environment.
+
+KeOps is required for efficient large-scale kernel and OT computations. Please refer to the official KeOps documentation for installation instructions: https://www.kernel-operations.io/keops/index.html
 
 ### Hardware
 
