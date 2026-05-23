@@ -12,9 +12,13 @@ from typing import Any, Dict, List, Optional, Tuple, Type
 from matplotlib.path import Path as MplPath
 from tqdm import trange
 from geomloss import SamplesLoss
+from pathlib import Path
 import sys
-sys.path.append('/home/zhouyj/stVirtual/src')
-from stVirtual_model.lr_dec import NoisyCountDecoder
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+SRC_DIR = PROJECT_ROOT / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.append(str(SRC_DIR))
+from model.lr_dec import NoisyCountDecoder
 from utils.compute_lr import compute_lr_potential_gpu 
 
 # -------------------- small utils --------------------
@@ -409,7 +413,7 @@ def sample_no_replace(probs: torch.Tensor, k: int, eps: float = 1e-12):
 def sample_birth_locations(centers: torch.Tensor, 
     mu_raw: torch.Tensor,        # (B,2) -> (mu_parallel, mu_perp)
     rho_raw: torch.Tensor,       # (B,2) -> (std_parallel, std_perp)
-    dir_vec: torch.Tensor,       # (B,2) 局部条带/生长方向（不要求严格单位，会归一化）
+    dir_vec: torch.Tensor,       
     dx, dy, seed: int = 2025,min_std: float = 1e-3, eps: float = 1e-8,
 ):
     device = centers.device
@@ -696,11 +700,11 @@ def build_decoder_pack(*, device: torch.device, stat_json: str, ckpt_path_dec: s
     with open(stat_json, "r") as f:
         cfg = json.load(f)
 
-    # ---- 关键：新版 json 必须有 genes（LR并集） ----
+    
     if "genes" not in cfg:
         raise KeyError(
-            f"[build_decoder_pack] stat_json 缺少 'genes' 字段。"
-            f"你现在的 pipeline 期望使用 pair count decoder 的 json（包含 genes/in_dim/out_dim）。"
+            f"[build_decoder_pack] stat_json is missing the 'genes' field."
+            f"This pipeline expects the pair-count decoder JSON with genes/in_dim/out_dim."
         )
 
     genes_union = [str(g) for g in cfg["genes"]]
@@ -709,12 +713,12 @@ def build_decoder_pack(*, device: torch.device, stat_json: str, ckpt_path_dec: s
 
     in_dim = int(cfg.get("in_dim", latent_dim))
     if int(in_dim) != int(latent_dim):
-        # 这里强校验，避免你换了 latent 模型导致维度对不上却悄悄跑错
+        
         raise ValueError(f"[build_decoder_pack] latent_dim mismatch: json in_dim={in_dim} vs passed latent_dim={latent_dim}")
 
     out_dim_json = int(cfg.get("out_dim", len(genes_union)))
     if out_dim_json != len(genes_union):
-        # 不致命，但几乎意味着你的 json/训练保存逻辑有问题
+        
         raise ValueError(f"[build_decoder_pack] out_dim mismatch: json out_dim={out_dim_json} vs len(genes)={len(genes_union)}")
 
     h = tuple(cfg.get("h", (256, 256)))

@@ -6,9 +6,13 @@ import matplotlib.pyplot as plt
 import scipy.sparse as sp
 from torchdiffeq import odeint
 from pathlib import Path
+from pathlib import Path
 import sys
-sys.path.append('/home/zhouyj/stVirtual/src')
-import stVirtual_model.ode_multislice as p
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+SRC_DIR = PROJECT_ROOT / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.append(str(SRC_DIR))
+import model.ode_multislice as p
 import matplotlib as mpl
 
 def plot_snapshots_2d(trace, x_tgt, *, n_show=6000, cols=5, s_src=2, s_tgt=1, title="Trajectory snapshots"):
@@ -37,7 +41,7 @@ def plot_snapshots_2d(trace, x_tgt, *, n_show=6000, cols=5, s_src=2, s_tgt=1, ti
             continue
 
         x_i = xs[i][idx].detach().cpu().numpy()
-        ax.scatter(x_tgt_show[:,0], x_tgt_show[:,1], s=s_tgt, alpha=0.25)  # target 背景
+        ax.scatter(x_tgt_show[:,0], x_tgt_show[:,1], s=s_tgt, alpha=0.25)  
         ax.scatter(x_i[:,0], x_i[:,1], s=s_src, alpha=0.70)
         ax.set_title(f"t={ts[i]:.2f}")
 

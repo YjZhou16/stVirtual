@@ -163,7 +163,7 @@ def _build_sparse_W_sklearn(
     nn = NearestNeighbors(algorithm=algo, n_jobs=n_jobs)
 
     if method == "knn":
-        # +1 是为了方便去 self
+        
         nn.set_params(n_neighbors=int(k) + (1 if exclude_self else 0))
         nn.fit(coords_np)
         dists, inds = nn.kneighbors(coords_np, return_distance=True)
@@ -428,8 +428,8 @@ def build_guide(
     src_chunk: int = 128,
 
     # ---------- NEW ----------
-    terrain_gap: bool | None = None,          # ✅ 开关：True 禁止跨洞；False 走原路线
-    save_pack_path: str | None = None,        # ✅ 保存 ctx + y_bar 等
+    terrain_gap: bool | None = None,          
+    save_pack_path: str | None = None,        
     pack_ctx_dtype: str = "float16",          # "float16" or "float32"
 ):
     # ---- NEW: terrain_gap override ----
@@ -485,7 +485,7 @@ def build_guide(
         occ = np.zeros((g, g), dtype=bool)
         occ[iy, ix] = True
 
-        # allowed = dilation(occ)  (注意：不 fill_holes，洞保持不可达)
+        
         allowed = binary_dilation(occ, iterations=int(dil)) if dil > 0 else occ
 
         # nearest allowed (for projection)
@@ -555,7 +555,7 @@ def build_guide(
         eps_used = float(eps)  # NEW: record, will be overwritten by retry result
 
         if obstacle and lam_x > 0:
-            # ---- 你的 obstacle 分支原样 ----
+            
             xy_all = np.vstack([xs_cpu[:, :2].numpy(), xT_cpu[:, :2].numpy()])
             allowed_np, near_y_np, near_x_np, bbox, G = _build_allowed_and_graph(
                 xy_all, int(grid), int(dilate), bool(diag)
@@ -618,7 +618,7 @@ def build_guide(
             grid_i = int(grid)
 
         else:
-            # ---- 原路线：欧式距离（仍然可加 ctx）----
+            
             C_t = lam_x * torch.cdist(xs_cpu, xT_cpu).pow(2)
             if lam_f > 0:
                 C_t = C_t + lam_f * torch.cdist(fs_cpu, fT_cpu).pow(2)
