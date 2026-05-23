@@ -21,12 +21,6 @@ cd stVirtual
 pip install -r requirements.txt
 ```
 
-## Source Data
-
-Mbrain: https://db.cngb.org/stomics/cbmsta      Mouse1 T167-T171 
-   
-IMC: https://zenodo.org/records/4752030
-
 ## System requirements
 
 ### Operating system
@@ -122,6 +116,13 @@ stVirtual/
 └── README.md
 ```
 
+## Source Data
+
+Mbrain: https://db.cngb.org/stomics/cbmsta      Mouse1 T167-T171 
+   
+IMC: https://zenodo.org/records/4752030
+
+
 ## Demo
 
 The quickest complete demo is the mouse brain route from slice `T170` to `T171` in `src/Mbrain/train_mouse.ipynb`.
@@ -205,7 +206,7 @@ Expected output:
 
 Expected demo runtime:
 
-- Stage-1 mouse brain `T170_to_T171`, 100 epochs: about 2-5 minutes on a modern high-memory NVIDIA GPU. The executed notebook records about 2 minutes for this stage.
+- For Stage-1 mouse brain `T170_to_T171`, the OT computation is relatively time-consuming due to context graph construction, taking about 10 minutes on a modern high-memory NVIDIA GPU. In contrast, the subsequent ODE training takes only about 2 minutes.
 - Full stage-1 + stage-2 workflow: tens of minutes to several hours depending on GPU, data size, route length, and epoch settings.
 - CPU-only runtime is expected to be much longer and is not recommended for the full demo.
 
@@ -295,8 +296,8 @@ outs = s2.run_multi_stages(
     best_ckpt_dir="outputs/stage2_policy_ckpt",
 )
 ```
-
-Boundary files for stage 2 can be produced with the dataset-specific `bound.py` helpers, for example `src/Mbrain/bound.py` or `src/imc/bound.py`.
+- Stage-2 mouse brain `T170_to_T171`, 100 epochs: about 16 minutes on a modern high-memory NVIDIA GPU. 
+- Boundary files for stage 2 can be produced with the dataset-specific `bound.py` helpers, for example `src/Mbrain/bound.py` or `src/imc/bound.py`.
 
 ## Reproduction instructions
 
