@@ -1,7 +1,7 @@
 # stVirtual
 
 <p align="center">
-  <img src="Slogan.png" alt="stVirtual overview" width="650">
+  <img src="Slogan1.png" alt="stVirtual overview" width="650">
 </p>
 
 stVirtual is a niche-driven multi-agent generative framework for reconstructing spatiotemporal 3D and 4D tissue dynamics from sparse and static measurements across space, time, and disease progression.
