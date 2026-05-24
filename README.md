@@ -36,5 +36,5 @@ pip install -r requirements.txt
 
 
 ## Reference
-Zhou Y., ..., Chen L.*, Zuo, C.*, Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
+Zhou Y., ..., Chen L.#, Zuo, C.#, Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
 
