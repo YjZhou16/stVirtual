@@ -19,6 +19,7 @@ cd stVirtual
 conda create -n stVirtual python=3.12.11 -y
 conda activate stVirtual
 pip install -r requirements.txt
+pip install .
 ```
 **Note:** If CUDA-related PyTorch or PyG packages fail to install, install PyTorch and PyG separately using wheels that match your CUDA version, then rerun `pip install -r requirements.txt` for the remaining dependencies. KeOps is required for efficient large-scale kernel and OT computations; installation instructions are available in the official KeOps documentation: https://www.kernel-operations.io/keops/index.html
 
