@@ -19,7 +19,11 @@ cd stVirtual
 conda create -n stVirtual python=3.12.11 -y
 conda activate stVirtual
 pip install -r requirements.txt
-pip install .
+# After creating and activating the environment, install stVirtual from the prebuilt wheel:
+pip install /path/to/stvirtual-0.1.0-cp312-cp312-linux_x86_64.whl
+
+# If the wheel is uploaded to GitHub Release later, users can install it with:
+pip install https://github.com/YjZhou16/stVirtual/releases/download/v0.1.0/stvirtual-0.1.0-cp312-cp312-linux_x86_64.whl
 ```
 **Note:** If CUDA-related PyTorch or PyG packages fail to install, install PyTorch and PyG separately using wheels that match your CUDA version, then rerun `pip install -r requirements.txt` for the remaining dependencies. KeOps is required for efficient large-scale kernel and OT computations; installation instructions are available in the official KeOps documentation: https://www.kernel-operations.io/keops/index.html
 
