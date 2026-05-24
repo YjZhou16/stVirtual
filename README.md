@@ -16,8 +16,8 @@ The code was tested on a workstation equipped with a 208-core Intel(R) Xeon(R) P
 
 ```bash
 cd stVirtual
-conda create -n stvirtual python=3.12.11 -y
-conda activate stvirtual
+conda create -n stVirtual python=3.12.11 -y
+conda activate stVirtual
 pip install -r requirements.txt
 ```
 **Note:** If CUDA-related PyTorch or PyG packages fail to install, install PyTorch and PyG separately using wheels that match your CUDA version, then rerun `pip install -r requirements.txt` for the remaining dependencies. KeOps is required for efficient large-scale kernel and OT computations; installation instructions are available in the official KeOps documentation: https://www.kernel-operations.io/keops/index.html
@@ -30,8 +30,10 @@ pip install -r requirements.txt
 
 ## Tutorials
 
-* [Tutorial1 GP1 demo](https://github.com/YjZhou16/stVirtual/wiki/Tutorial1%EF%BC%9AGP1-demo): 3D tissue reconstruction using spatial proteomics data in human gastric cancer
-* [Tutorial2 Mbrain demo](https://github.com/YjZhou16/stVirtual/wiki/Tutorial2%EF%BC%9AMouse_brain-demo): 3D tissue reconstruction using spatial transcriptomics data in mouse brain
+* [Virtual slices generation for 3D reconstruction](https://github.com/YjZhou16/stVirtual/wiki/Tutorial2%EF%BC%9AMouse_brain-demo): 3D tissue reconstruction using spatial transcriptomics data (Stereo-seq data) in mouse brain
+
+* [4D tumor reconstruction and in silico pertubation](https://github.com/YjZhou16/stVirtual/wiki/Tutorial1%EF%BC%9AGP1-demo): 4D tissue reconstruction using paired normal and tumor sections in human gastric cancer
+
 
 ## Reference
 Zhou Y., ..., Chen L., Zuo, C., Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
