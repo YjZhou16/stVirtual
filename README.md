@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 * [Virtual slices generation for 3D reconstruction](https://github.com/YjZhou16/stVirtual/wiki/Virtual-slices-generation-for-3D-reconstruction): 3D tissue reconstruction using spatial transcriptomics data (Stereo-seq data) in mouse brain
 
-* [4D tumor reconstruction, in silico pertubation, and zero-shot learning](https://github.com/YjZhou16/stVirtual/wiki/4D-tumor-reconstruction-and-in-silico-pertubation): 4D tissue reconstruction from paired Visium-profiled normal and tumor sections in human gastric cancer
+* [4D tumor reconstruction, in silico pertubation, and zero-shot learning](https://github.com/YjZhou16/stVirtual/wiki/4D-tumor-reconstruction-and-in-silico-pertubation): 4D tumor dynamics reconstructed from paired Visium-profiled normal and tumor sections in human gastric cancer
 
 
 ## Reference
