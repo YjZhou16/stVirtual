@@ -38,5 +38,5 @@ pip install https://github.com/YjZhou16/stVirtual/releases/download/v0.1.0/stvir
 
 
 ## Reference
-Zhou Y., ..., Chen L.#, Zuo, C.#, Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
+Reconstructing tissue dynamics and enabling in silico perturbation from spatial omics through niche-driven multi-agent learning, 2026, Under review.
 
