@@ -1,0 +1,46 @@
+dataset: Mcardiac
+data_root: data
+run_root: artifacts/results
+checkpoint_root: artifacts/checkpoints
+scanvi_dir: artifacts/checkpoints/scanvi
+lr_pairs_path: ../../lrpairs/mouse/LR_pairs.csv
+diff_map_path: data/diff_map.csv
+source_dataset: heart_9_11
+public_baseline: corrected_lineage
+spatial_dimension: 3
+stage1_module: stvirtual.models.stage1_3d
+stage2_module: stvirtual.models.stage2_3d_lineage
+latent_key: X_scanVI
+celltype_source_key: annotation
+decoder_checkpoint: artifacts/checkpoints/decoder/checkpoints/{src}_{tgt}.pt
+stage1_checkpoint: artifacts/checkpoints/stage1
+stage2_checkpoint: artifacts/checkpoints/stage2
+output_dir: artifacts/results/rollout
+stage1_loss:
+  uot_eps: 0.05
+  uot_tau: 1.0
+  uot_lam_x: 1.0
+  uot_lam_f: 1.0
+  lam_uot: 1.0
+stage2_loss:
+  rl_xy: 1.0
+  rl_z: 1.0
+  rl_occ: 1.0
+  rl_occ_iou: 1.0
+  rl_ent: 0.01
+boundary:
+  dimension: 3
+  pts_per_cell: 1.0
+  base: 4
+  max_hw: 256
+  min_hw: 16
+  max_d: 128
+  min_d: 8
+  margin: 0.05
+  splat_radius: 1
+  dilate_iter: 1
+  close_iter: 2
+  fill_holes: true
+  keep_lcc: false
+  min_count: 1
+  n_cache: 256

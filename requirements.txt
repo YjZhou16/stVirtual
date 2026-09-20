@@ -1,0 +1,26 @@
+# Install a CUDA-compatible PyTorch build first when the default wheel is not suitable.
+anndata==0.12.2
+geomloss>=0.2.6
+h5py>=3.11
+ipykernel>=6.29
+jupyterlab>=4.2
+matplotlib>=3.9
+numpy==2.1.2
+pandas==2.3.2
+POT>=0.9.5
+PyYAML>=6.0
+scanpy==1.11.4
+scikit-learn>=1.5
+scipy>=1.14
+scvi-tools==1.4.0
+seaborn>=0.13
+squidpy>=1.6
+torch==2.8.0
+torchdiffeq>=0.2.5
+tqdm>=4.66
+
+# Install the compiled model implementation (Linux x86_64, CPython 3.12).
+./wheels/stvirtual_core-0.1.0.dev0-cp312-cp312-linux_x86_64.whl
+
+# Install the local stVirtual package after its dependencies.
+-e .

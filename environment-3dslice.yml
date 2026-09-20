@@ -1,0 +1,18 @@
+name: stvirtual-3dslice
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pytorch=2.8
+  - pytorch-cuda=12.8
+  - cuda-nvcc=12.8
+  - cmake
+  - ninja
+  - ffmpeg
+  - ipykernel
+  - pip
+  - pip:
+      - ./wheels/stvirtual_core-0.1.0.dev0-cp312-cp312-linux_x86_64.whl
+      - -e .[notebooks]

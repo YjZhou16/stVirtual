@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stvirtual"
+version = "0.1.0.dev0"
+description = "Spatiotemporal virtual tissue modeling"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "anndata",
+    "geomloss",
+    "h5py",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "POT",
+    "PyYAML",
+    "scanpy",
+    "scikit-learn",
+    "scipy",
+    "scvi-tools",
+    "torch",
+    "torchdiffeq",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+notebooks = ["ipykernel", "jupyterlab", "seaborn", "squidpy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
