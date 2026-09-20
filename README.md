@@ -10,13 +10,30 @@ stVirtual is a niche-driven multi-agent generative framework for reconstructing 
 
 The code was tested on a workstation equipped with a 208-core Intel(R) Xeon(R) Platinum 8473C CPU, 512 GB of RAM, and an NVIDIA RTX PRO 6000 GPU with 96 GB of RAM, running Ubuntu 24.04.3 LTS and Python 3.12.11. If possible, stVirtual should be run with CUDA acceleration.
 
-The pre-release repository distributes the model implementation as a compiled
-binary wheel. The public `stvirtual.models` modules are stable compatibility
-wrappers, so the imports used by the notebooks do not change. The bundled wheel
-currently supports Linux x86_64 with CPython 3.12 only. Model source code will be
-released with the publication version.
+### Pre-release binary distribution
 
-Unsupported Python or operating-system combinations fail during installation.
+During manuscript review, the core implementations in `stvirtual.models` are
+distributed as a compiled binary wheel rather than as Python source files. This
+temporary distribution protects the unpublished model implementation while still
+allowing users and reviewers to install, train, evaluate, and run every public
+workflow in this repository. The complete model source code is planned for release
+with the publication version.
+
+The small Python files under `src/stvirtual/models/` are compatibility wrappers.
+They forward calls to the compiled `stvirtual-core` package, so the public API and
+all notebook imports remain unchanged. For example:
+
+```python
+from stvirtual.models import stage1_2d
+from stvirtual.models import stage2_2d_lineage
+```
+
+The bundled wheel currently supports CPython 3.12 on Linux x86_64. It does not
+support Python 3.10/3.11, macOS, Windows, ARM64, or PyPy. Unsupported platforms
+fail explicitly during installation; there is no silent fallback to a different
+model implementation. A compiled wheel raises the barrier to casual source
+inspection but should not be interpreted as absolute protection against reverse
+engineering.
 
 ### Install stVirtual in the virtual environment by conda
 * First, install conda: https://docs.anaconda.com/anaconda/install/index.html
