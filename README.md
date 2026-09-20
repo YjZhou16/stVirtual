@@ -65,9 +65,9 @@ Source datasets are not redistributed. Download links, accessions, access restri
 
 ## Tutorials
 
-- [TissueFlow 2D Tutorial](docs/wiki/01-tissueflow-2d.md) — Mbrain, Membryo, and OpenST.
-- [LineageFlow 2D Tutorial](docs/wiki/02-lineageflow-2d.md) — GP1 and LUAD.
-- [VolumeFlow 3D Tutorial](docs/wiki/03-volumeflow-3d.md) — add a non-lineage volumetric dataset.
-- [CardioLineage 3D Tutorial](docs/wiki/04-cardio-lineage-3d.md) — corrected Mcardiac lineage workflow.
+- [TissueFlow 2D Tutorial](https://github.com/YjZhou16/stVirtual/wiki/TissueFlow-2D) — Mbrain, Membryo, and OpenST.
+- [LineageFlow 2D Tutorial](https://github.com/YjZhou16/stVirtual/wiki/LineageFlow-2D) — GP1 and LUAD.
+- [VolumeFlow 3D Tutorial](https://github.com/YjZhou16/stVirtual/wiki/VolumeFlow-3D) — add a non-lineage volumetric dataset.
+- [CardioLineage 3D Tutorial](https://github.com/YjZhou16/stVirtual/wiki/CardioLineage-3D) — corrected Mcardiac lineage workflow.
 
 Each tutorial documents input data, preprocessing, decoder training, Stage 1, boundary generation, Stage 2, rollout outputs, and the recommended execution order.
