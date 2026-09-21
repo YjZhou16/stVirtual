@@ -51,11 +51,6 @@ the public package in editable mode. Verify the wheel checksum against
 
 **Note:** If CUDA-related PyTorch packages fail to install, install PyTorch separately using a wheel that matches your CUDA version, then rerun `pip install -r requirements.txt` for the remaining dependencies.
 
-### Typical installation time:
-
-- Existing CUDA/PyTorch-compatible environment: 5-15 minutes
-- Fresh Linux workstation with package downloads: 20-60 minutes
-- CPU-only desktop: 15-45 minutes, but full training is not recommended
 
 ## Data availability
 
