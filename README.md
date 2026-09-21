@@ -31,9 +31,7 @@ from stvirtual.models import stage2_2d_lineage
 The bundled wheel currently supports CPython 3.12 on Linux x86_64. It does not
 support Python 3.10/3.11, macOS, Windows, ARM64, or PyPy. Unsupported platforms
 fail explicitly during installation; there is no silent fallback to a different
-model implementation. A compiled wheel raises the barrier to casual source
-inspection but should not be interpreted as absolute protection against reverse
-engineering.
+model implementation. 
 
 ### Install stVirtual in the virtual environment by conda
 * First, install conda: https://docs.anaconda.com/anaconda/install/index.html
