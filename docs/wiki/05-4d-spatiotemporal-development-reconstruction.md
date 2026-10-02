@@ -47,21 +47,25 @@ Frames record `uid`, `parent_uid`, `diff_alpha`, source and target layers, commi
 
 Each simulation route is written to `artifacts/results/simulation/<src>_to_<tgt>/`. Every frame is an AnnData file with coordinates in `obsm["spatial"]`, latent states in `obsm["X_latent"]`, and cell-type annotations in `obs["celltype"]` and `obs["celltype_id"]`. The adjacent `celltype_mapping.csv` maps IDs to names.
 
-## No-label variant
+## Infer transitions without a supplied diff map
 
-For reconstruction without cell-type labels, use the 4D `nolabel` models with the same XYZ coordinates and `X_scanVI` representation:
+This variant retains cell-type labels and infers transition relationships from joint UOT using XYZ coordinates and `X_scanVI`. Source-label permutations identify enriched transitions; the discovered edges become the Stage-2 transition map.
 
-```python
-from stvirtual.models.nolabel import stage1_4d as s1
-from stvirtual.models.nolabel import stage2_4d as s2
+After preprocessing, run from the repository root:
+
+```bash
+python experiments/Mcardiac/infer_transition_map.py
 ```
 
-Adapt the training cells in `train.ipynb` as follows:
+The command writes `edge_statistics.csv` and `discovered_transition.csv` under `experiments/Mcardiac/artifacts/transition_uot/`. It uses all cell types present in the two endpoint samples. Labels group transported mass for the permutation analysis; the UOT cost uses coordinates and latent features.
 
-- Set `stage1_module` to `stvirtual.models.nolabel.stage1_4d` and `stage2_module` to `stvirtual.models.nolabel.stage2_4d` in the experiment configuration. Keep `spatial_dimension: 3` and the `stage` sample key.
-- Call `s1.train_model_multislice` without `cell_type_key` or `lam_context`, then export the Stage-1 trace and build the voxel boundaries.
-- Call `s2.build_global_ctx` without `layer_col`. Create `s2.StageCfg` without `layer_col` or `diff_csv`, and call `s2.prepare_one_stage` with `sample_key="stage"`. Omit transition-specific checkpoint, cell-type, and differentiation-map assertions.
-- Train with `s2.run_multi_stages`, then call `s2.simulation_policy_one_stage` with `sample_key="stage"` and `output_dir`, without `TAU_DIFF`. Use separate checkpoint and output paths for this variant. Its saved frames contain coordinates, latent states, and cell identities; omit the transition-specific metadata export cells.
+In `experiments/Mcardiac/config.yaml`, set:
+
+```yaml
+diff_map_path: artifacts/transition_uot/discovered_transition.csv
+```
+
+Continue with `train.ipynb` using `stage1_4d` and `stage2_4d_transition`. The notebook passes this generated file to `StageCfg.diff_csv`. Set separate checkpoint and result paths before training this variant. The generated table retains discovered self-edges for inspection; Stage 2 treats them as maintenance and loads non-self transitions. No supplied transition map or reference-edge list is used to select the discovered edges.
 
 ## Recommended order
 
