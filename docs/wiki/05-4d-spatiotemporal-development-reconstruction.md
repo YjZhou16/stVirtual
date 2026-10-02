@@ -47,6 +47,22 @@ Frames record `uid`, `parent_uid`, `diff_alpha`, source and target layers, commi
 
 Each simulation route is written to `artifacts/results/simulation/<src>_to_<tgt>/`. Every frame is an AnnData file with coordinates in `obsm["spatial"]`, latent states in `obsm["X_latent"]`, and cell-type annotations in `obs["celltype"]` and `obs["celltype_id"]`. The adjacent `celltype_mapping.csv` maps IDs to names.
 
+## No-label variant
+
+For reconstruction without cell-type labels, use the 4D `nolabel` models with the same XYZ coordinates and `X_scanVI` representation:
+
+```python
+from stvirtual.models.nolabel import stage1_4d as s1
+from stvirtual.models.nolabel import stage2_4d as s2
+```
+
+Adapt the training cells in `train.ipynb` as follows:
+
+- Set `stage1_module` to `stvirtual.models.nolabel.stage1_4d` and `stage2_module` to `stvirtual.models.nolabel.stage2_4d` in the experiment configuration. Keep `spatial_dimension: 3` and the `stage` sample key.
+- Call `s1.train_model_multislice` without `cell_type_key` or `lam_context`, then export the Stage-1 trace and build the voxel boundaries.
+- Call `s2.build_global_ctx` without `layer_col`. Create `s2.StageCfg` without `layer_col` or `diff_csv`, and call `s2.prepare_one_stage` with `sample_key="stage"`. Omit transition-specific checkpoint, cell-type, and differentiation-map assertions.
+- Train with `s2.run_multi_stages`, then call `s2.simulation_policy_one_stage` with `sample_key="stage"` and `output_dir`, without `TAU_DIFF`. Use separate checkpoint and output paths for this variant. Its saved frames contain coordinates, latent states, and cell identities; omit the transition-specific metadata export cells.
+
 ## Recommended order
 
 1. Review and edit `config.yaml`.
