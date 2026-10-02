@@ -1,0 +1,56 @@
+dataset: imc
+data_root: data
+run_root: artifacts/results
+checkpoint_root: artifacts/checkpoints
+scanvi_dir: artifacts/checkpoints/scanvi
+lr_pairs_path: null
+spatial_dimension: 2
+stage1_module: stvirtual.models.stage1_3d
+stage2_module: stvirtual.models.stage2_3d
+latent_key: X_protein
+celltype_source_key: gaston_region
+stage1_checkpoint: artifacts/checkpoints/stage1
+stage2_checkpoint: artifacts/checkpoints/stage2
+output_dir: artifacts/results/simulation
+stage1_loss:
+  uot_eps: 0.01
+  uot_tau: 20.0
+  uot_lam_x: 2.0
+  uot_lam_f: 0.0005
+  lam_uot: 1.0
+stage2_loss:
+  rl_xy: 2.0
+  rl_z: 0.005
+  rl_occ: 1.0
+  rl_occ_iou: 1.0
+  rl_ent: 0.01
+boundary:
+  dimension: 2
+  alpha_factor: 3.2
+  target_frac: 0.99
+  expand0: 1.02
+  expand_step: 0.01
+  expand_max: 1.3
+  fallback_expand: 1.05
+  n_resample: 256
+  n_cache: 256
+routes:
+- - '0'
+  - '2'
+- - '2'
+  - '4'
+- - '4'
+  - '6'
+- - '6'
+  - '8'
+- - '8'
+  - '10'
+- - '10'
+  - '12'
+- - '12'
+  - '14'
+input_path: data/imc_all.h5ad
+protein_layer: scaled
+use_lr: false
+decode: false
+prepared_path: artifacts/preprocessing/imc.h5ad

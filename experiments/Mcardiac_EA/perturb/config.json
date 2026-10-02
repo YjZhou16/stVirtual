@@ -1,0 +1,23 @@
+{
+  "latent_update_gain": 1.2,
+  "fractions": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035
+  ],
+  "output_root": "../artifacts/extrapolation",
+  "training_manifest": "../artifacts/training/E10.5_CD1_to_E12.5_CD1.json"
+}

@@ -1,0 +1,54 @@
+dataset: HMLN
+data_root: data
+run_root: artifacts/results
+checkpoint_root: artifacts/checkpoints
+scanvi_dir: artifacts/checkpoints/scanvi
+lr_pairs_path: ../../lrpairs/human/LR_pairs.csv
+spatial_dimension: 2
+stage1_module: stvirtual.models.stage1_3d
+stage2_module: stvirtual.models.stage2_3d
+latent_key: X_scanVI
+celltype_source_key: annotation
+decoder_checkpoint: artifacts/checkpoints/decoder/checkpoints/{src}_{tgt}.pt
+stage1_checkpoint: artifacts/checkpoints/stage1
+stage2_checkpoint: artifacts/checkpoints/stage2
+output_dir: artifacts/results/simulation
+stage1_loss:
+  uot_eps: 0.05
+  uot_tau: 0.5
+  uot_lam_x: 2.0
+  uot_lam_f: 0.05
+  lam_uot: 1.0
+stage2_loss:
+  rl_xy: 2.0
+  rl_z: 0.05
+  rl_occ: 1.0
+  rl_occ_iou: 1.0
+  rl_ent: 0.01
+boundary:
+  dimension: 2
+  alpha_factor: 3.2
+  target_frac: 0.99
+  expand0: 1.02
+  expand_step: 0.01
+  expand_max: 1.3
+  fallback_expand: 1.05
+  n_resample: 256
+  n_cache: 256
+sample_mapping:
+  S2: S1
+  S3: S2
+  S4: S3
+  S17: S4
+  S18: S5
+  S19: S6
+  S24: S7
+  S25: S8
+  S26: S9
+routes:
+- - S1
+  - S3
+- - S4
+  - S6
+- - S7
+  - S9

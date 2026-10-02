@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this software when using stVirtual."
+type: software
+title: stVirtual
+version: v0.2.0
+url: https://github.com/YjZhou16/stVirtual
+license: MIT
+authors:
+  - family-names: Zhou
+    given-names: Yijin
+    affiliation: "State Key Laboratory of Biocontrol, Innovation Center for Evolutionary Synthetic Biology, School of Life Sciences, Sun Yat-sen University, Guangzhou 510275, China"
+  - family-names: Li
+    given-names: Kai
+    affiliation: "State Key Laboratory of Biocontrol, Innovation Center for Evolutionary Synthetic Biology, School of Life Sciences, Sun Yat-sen University, Guangzhou 510275, China"
+  - family-names: Chen
+    given-names: Luonan
+    affiliation: "School of Mathematical Sciences and School of AI, Shanghai Jiao Tong University, Shanghai 200240, China; Key Laboratory of Systems Health Science of Zhejiang Province, School of Life Science, Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences, Hangzhou 310024, China"
+  - family-names: Zuo
+    given-names: Chunman
+    affiliation: "State Key Laboratory of Biocontrol, Innovation Center for Evolutionary Synthetic Biology, School of Life Sciences, Sun Yat-sen University, Guangzhou 510275, China"

@@ -1,0 +1,18 @@
+[
+  {
+    "source": "/home/zhouyj/stVirtual_revision/R2/C9/LUAD/insilico_knockout.ipynb",
+    "sha256": "0195df6347ced461a8c01d749dadf377b4dcff25dbba69e4b0eec0551748b8cf"
+  },
+  {
+    "source": "/home/zhouyj/stVirtual_revision/R2/C9/LUAD/draw_paper2.ipynb",
+    "sha256": "544723694e674693ec954f23fb9fd4d7a344620adea767e5a1a0cfabf1533e94"
+  },
+  {
+    "source": "/home/zhouyj/stVirtual_revision/R2/C9/LUAD/casestudy_lineage.py",
+    "sha256": "f9920270a3a506006f6f8a081adb994f16b57218ec7f40497f38c9a183b871d8"
+  },
+  {
+    "source": "/home/zhouyj/stVirtual_revision/R2/C9/LUAD/perturb_gene.py",
+    "sha256": "1a49b34eca5c620ed943d1d56bf564c99e8c408396cc56d606da11d2e461a716"
+  }
+]
