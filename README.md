@@ -13,13 +13,6 @@ The code was tested on a workstation equipped with a 208-core Intel(R) Xeon(R) P
 
 ### Model runtime
 
-stVirtual uses the `stvirtual-core` model runtime through the public `stvirtual.models` API:
-
-```python
-from stvirtual.models import stage1_3d
-from stvirtual.models import stage2_3d_transition
-```
-
 The model runtime is distributed as a precompiled wheel for CPython 3.12 on Linux x86_64.
 
 The runtime supports CPython 3.12 on Linux x86_64.
