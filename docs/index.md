@@ -13,7 +13,6 @@ Start with installation and a complete experiment, then explore the workflows fo
 | [3D tissue reconstruction](wiki/01-3d-tissue-reconstruction.md) | HMLN, Mbrain, and Human breast cancer |
 | [Developmental reconstruction across time](wiki/02-developmental-reconstruction-across-time.md) | Membryo and Mcardiac_EA |
 | [Cancer progression across stages](wiki/03-cancer-progression-across-stages.md) | Human gastric cancer and Human lung cancer |
-| [4D tissue reconstruction](wiki/04-4d-tissue-reconstruction.md) | Workflow template |
 | [4D spatiotemporal development reconstruction](wiki/05-4d-spatiotemporal-development-reconstruction.md) | Mcardiac |
 | [Perturbation](wiki/06-perturbation.md) | Cell removal, expression suppression, and cell-state transition or signaling interventions |
 
@@ -33,7 +32,6 @@ Data-Availability
 wiki/01-3d-tissue-reconstruction
 wiki/02-developmental-reconstruction-across-time
 wiki/03-cancer-progression-across-stages
-wiki/04-4d-tissue-reconstruction
 wiki/05-4d-spatiotemporal-development-reconstruction
 wiki/06-perturbation
 ```
