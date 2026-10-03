@@ -21,10 +21,10 @@ The GIF concatenates E9.5→E11.5, E11.5→E13.5, and E13.5→E15.5.
 
 ## Membryo workflow
 
-Use `experiments/Membryo` and the MOSTA data described in [Data Availability](../Data-Availability.md). The routes connect E9.5 to E11.5, E11.5 to E13.5, and E13.5 to E15.5.
+Use `experiments/Membryo` and the MOSTA data described in [Data Availability](../Data-Availability.md). The notebook example uses full embryo sections from E15.5 to E16.5. Set `route_ids` and `steps` in `config.yaml` to select the developmental route.
 
 1. Review `config.yaml`, including input paths, the mouse LR table, and the configured latent key.
-2. Run `preprocess.ipynb` to prepare spatial coordinates, cell annotations, raw counts, and the scanVI representation. The registered input is saved at `artifacts/checkpoints/scanvi/adata.h5ad` with `obsm["X_scanVI"]`.
+2. Run `preprocess.ipynb` to retain all cells and tissue annotations, preserve raw counts, and train scanVI. Align each timepoint by translating its all-cell centroid to the E16.5 reference centroid. The registered input is saved at `artifacts/checkpoints/scanvi/adata.h5ad` with `obsm["X_scanVI"]`.
 3. Run `decoder.ipynb` to train the route-specific expression decoders. Checkpoints are written to `artifacts/checkpoints/decoder/checkpoints/<src>_<tgt>.pt`.
 4. Run `train.ipynb`: `stvirtual.models.stage1_3d` learns each developmental route, the notebook builds planar boundaries from the Stage-1 trace, and `stvirtual.models.stage2_3d` models movement, birth, death, signaling, and latent-state dynamics.
 5. Inspect the generated frames along each route before comparing developmental stages.
