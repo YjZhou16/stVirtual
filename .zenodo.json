@@ -3,7 +3,7 @@
   "description": "stVirtual is a niche-driven multi-agent generative framework for reconstructing spatiotemporal 3D and 4D tissue dynamics from sparse and static measurements across space, time, and disease progression.",
   "upload_type": "software",
   "license": "MIT",
-  "version": "v0.2.0",
+  "version": "v1.0.0",
   "creators": [
     {
       "name": "Zhou, Yijin",
