@@ -1,0 +1,22 @@
+body { font-size: 16px; }
+.wy-nav-content { max-width: 1080px; }
+.rst-content h1 { color: #173c56; }
+.rst-content h2 { margin-top: 2rem; }
+.rst-content .highlight { border-radius: 6px; }
+.rst-content .cell_output img { max-width: 100%; height: auto !important; }
+.rst-content .cell_output { overflow-x: auto; }
+.rst-content table { width: 100%; }
+.wy-side-nav-search { background: #173c56; }
+
+/* Keep the dataset alignment table readable in a narrow content pane. */
+#spatial-alignment table {
+  width: 100%;
+  table-layout: fixed;
+}
+#spatial-alignment table th,
+#spatial-alignment table td,
+#spatial-alignment table td code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}

@@ -1,0 +1,14 @@
+project = "stVirtual-tutorial"
+author = "stVirtual contributors"
+copyright = "2026, stVirtual contributors"
+html_title = "stVirtual-tutorial"
+extensions = ["myst_nb"]
+html_theme = "sphinx_rtd_theme"
+html_theme_options = {"navigation_depth": 3, "collapse_navigation": False}
+html_static_path = ["docs/_static"]
+html_css_files = ["tutorial.css"]
+nb_execution_mode = "off"
+nb_output_stderr = "remove"
+myst_enable_extensions = ["colon_fence", "dollarmath", "amsmath"]
+myst_heading_anchors = 4
+exclude_patterns = ["**/lightning_logs/**", ".work/**", "_build/**", ".venv/**", "preparation/**", "PREPARATION_PROMPT.md", "README.md", "lrpairs/**", "**/data/**", "**/artifacts/**", "**/.ipynb_checkpoints/**", "**/README.md", "**/*.py", "docs/requirements.txt"]
