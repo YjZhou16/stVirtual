@@ -1,6 +1,6 @@
 # Quick start
 
-[Notebook tutorial](https://stvirtual-tutorial.readthedocs.io/en/latest/docs/quickstart.html).
+[Notebook tutorial](https://stVirtual-tutorial.readthedocs.io/en/latest/docs/quickstart.html).
 
 **Recommended memory for the Mbrain example: at least 64 GB RAM and 24 GB GPU memory.**
 

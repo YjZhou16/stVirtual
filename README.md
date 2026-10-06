@@ -50,7 +50,7 @@ Data sources, required files, and local folders are listed in the **Input data**
 
 ## Tutorials
 
-[Notebook tutorials on Read the Docs](https://stvirtual-tutorial.readthedocs.io/en/latest/) cover preprocessing, training, results, and perturbation experiments.
+[Notebook tutorials on Read the Docs](https://stVirtual-tutorial.readthedocs.io/en/latest/) cover preprocessing, training, results, and perturbation experiments.
 
 - [Quick start](https://github.com/YjZhou16/stVirtual/wiki/Quick-start) — Mbrain.
 - [3D tissue reconstruction](https://github.com/YjZhou16/stVirtual/wiki/3D-tissue-reconstruction) — HMLN, Mbrain, and Human breast cancer.
