@@ -1,0 +1,21 @@
+dataset: GP1
+experiment_config: ../config.yaml
+source: normal
+target: cancer
+sample_key: status
+celltype_key: cluster
+mode: cell_removal
+gene: ALDH3A1
+fraction: 0.3
+selection: exact_topk
+quantile: 0.7
+seed: 2025
+lam_context: 0.0
+guide_topk: 3600
+residual_scales:
+- 0.2
+- 0.05
+- 0.05
+latent_noise_scale: 0.01
+output: ../artifacts/perturb/aldh3a1_exact_top30_seed2025
+baseline_frames: ../artifacts/results/simulation/normal_to_cancer/*.h5ad

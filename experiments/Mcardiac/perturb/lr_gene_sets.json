@@ -1,0 +1,36 @@
+{
+  "ventricular": [
+    "Cdh2|Cdh2",
+    "Hspg2|Dag1",
+    "Lama4|Dag1",
+    "Lamc1|Dag1",
+    "Lamb1|Dag1",
+    "Wnt5a|Mcam",
+    "Tnfsf12|Tnfrsf12a",
+    "Lama2|Dag1",
+    "Flg|Pard3",
+    "Cd200|Cd200r4",
+    "Igf2|Igf1r",
+    "Agrn|Dag1",
+    "Nrg4|Erbb4",
+    "Hbegf|Erbb4",
+    "F2|Pard3"
+  ],
+  "atrial": [
+    "Wnt11|Fzd1",
+    "Negr1|Negr1",
+    "Pdgfc|Pdgfra",
+    "Pomc|Oprl1",
+    "Lama2|Sv2a",
+    "Hbegf|Egfr",
+    "Nrxn3|Nlgn1",
+    "Gas6|Axl",
+    "Mif|Ackr3",
+    "Nrg2|Erbb3",
+    "Penk|Oprl1",
+    "Wnt5b|Fzd1",
+    "Wnt5a|Fzd1",
+    "Egf|Egfr",
+    "Ncam1|L1cam"
+  ]
+}

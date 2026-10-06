@@ -1,0 +1,213 @@
+{
+  "source_root": "/home/zhouyj/stVirtual_revision/R2/C17",
+  "width": 960,
+  "fps": 10,
+  "loop": 0,
+  "dither": "bayer_scale=4",
+  "jobs": [
+    {
+      "gif": "human_gastric_cancer.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "bytes": 6574880,
+      "sha256": "c47970ebaa9b10ada242dd888b519c59be69a405c2126cb685a605a221d0ed88",
+      "sources": [
+        {
+          "path": "gp1/GP1_normal_cancer.mp4",
+          "sha256": "f08bf8aacfcf84d192e053780ebd69aa86590e734d7ed18001fe43afb9cb746f",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "nb_frames": "1200",
+          "duration": "20.000000"
+        }
+      ]
+    },
+    {
+      "gif": "human_lung_cancer.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "bytes": 9130268,
+      "sha256": "801521b483264162132b37854bd5cfff17e9ec03b39cb1b997a5c65125572934",
+      "sources": [
+        {
+          "path": "luad/LUAD_AAH_LUAD.mp4",
+          "sha256": "02be57d8d1ce88dc8e0df76ee49640698c13cba8f2b0535fcbc9dc84514810f9",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        }
+      ]
+    },
+    {
+      "gif": "mbrain.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "bytes": 11994995,
+      "sha256": "c02c5ee6d91026b76481578250bfa5ee3c1cc56664d8a196c29494e82b19e67a",
+      "sources": [
+        {
+          "path": "mouse/Mbrain_T168_T171.mp4",
+          "sha256": "5d50adc0df8792d79beb17f8c7829c288ea28747b26e6fc20e50e033aafa78be",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        }
+      ]
+    },
+    {
+      "gif": "membryo.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 210,
+      "duration_seconds": 21.0,
+      "bytes": 8692337,
+      "sha256": "570e1f0763ace334a5be0047c1a42ffa8fdbd03c8e8f2e2b852080baa6b82dd3",
+      "sources": [
+        {
+          "path": "mosta/MOSTA_E9.5_E11.5_slow6s_total7s.mp4",
+          "sha256": "d7691cea0169c24a20470da9f8e0bccbf1d3b970a83c3a1d6ff9a15288574fa9",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "7.000000",
+          "nb_frames": "420"
+        },
+        {
+          "path": "mosta/MOSTA_E11.5_E13.5_slow6s_total7s.mp4",
+          "sha256": "cf04bab3e59336ebf13bd0ca6ec446e2e91795468af3ba6b7f99f0b2c3f1eeb9",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "7.000000",
+          "nb_frames": "420"
+        },
+        {
+          "path": "mosta/MOSTA_E13.5_E15.5_slow6s_total7s.mp4",
+          "sha256": "06d6d947aa59f2c043723ba8931eed4a2808a89b68ef57ef6c11b1fda6c001cf",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "7.000000",
+          "nb_frames": "420"
+        }
+      ]
+    },
+    {
+      "gif": "hmln.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 600,
+      "duration_seconds": 60.0,
+      "bytes": 29271299,
+      "sha256": "a93411cb6bf78547f3a113d1fabb0b197414075a7518d52e47414e802b86f883",
+      "sources": [
+        {
+          "path": "hmln/HMLN_S1_S3.mp4",
+          "sha256": "539c1ac766f63ff7ca2d17960fa3918d6ff7f71c4e895697bcf884ee1aab56fe",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        },
+        {
+          "path": "hmln/HMLN_S4_S6.mp4",
+          "sha256": "ed52cf66c86cd1c959ae1489109b50539e41a05a0fd62f9c98ea5d0bb0ed88c0",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        },
+        {
+          "path": "hmln/HMLN_S7_S9.mp4",
+          "sha256": "74f6143d51aff48d235eee68e01999fc43c261d741c53ea3612e4bbe725ef303",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        }
+      ]
+    },
+    {
+      "gif": "mcardiac.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 136,
+      "duration_seconds": 13.6,
+      "bytes": 5611809,
+      "sha256": "ae372204685e7c500e6756cb38a5c30310d682ffec3daaec9247c7256b12188c",
+      "sources": [
+        {
+          "path": "heart/Heart_E9.5_E11.5_xyz_timeline.mp4",
+          "sha256": "ab8c8806508a6216f25343d7767a339d3345994dab806024f27f3a532d3f4d55",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "13.600000",
+          "nb_frames": "816"
+        }
+      ]
+    },
+    {
+      "gif": "human_breast_cancer.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "bytes": 11338385,
+      "sha256": "aea658ed343b36383590db00c6ddc6f5a395b5ec463ae3c84e72521f3d712dc5",
+      "sources": [
+        {
+          "path": "imc/IMC_0_14.mp4",
+          "sha256": "2af668620c8636c39420cd809499232a404a5359ac82f92de46903077e6383b6",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        }
+      ]
+    },
+    {
+      "gif": "Mcardiac_EA.gif",
+      "width": 960,
+      "height": 540,
+      "fps": 10,
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "bytes": 9759645,
+      "sha256": "45a1c6ec688811908fe914129595f1a66d3559aa76fb9aeec0d09fda8232c042",
+      "sources": [
+        {
+          "path": "heart_slide_seq/HeartSlide_E10.5_E12.5.mp4",
+          "sha256": "60e82cfa89dcb0fa7372dc5981f9e5c03e90ef13c26d9f1479c2ae599c4ee2a8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1",
+          "duration": "20.000000",
+          "nb_frames": "1200"
+        }
+      ]
+    }
+  ]
+}

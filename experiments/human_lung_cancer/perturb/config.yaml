@@ -1,0 +1,24 @@
+dataset: LUAD
+experiment_config: ../config.yaml
+source: AAH
+target: LUAD
+sample_key: status
+celltype_key: _clone_s
+mode: gene_knockdown
+intervention_samples:
+- AAH
+celltypes:
+- '4'
+- '6'
+genes: []
+random_gene_count: 10
+factor: 0.0
+seed: 2025
+lam_context: 0.0
+guide_topk: 3600
+residual_scales:
+- 0.2
+- 0.05
+- 0.05
+latent_noise_scale: 0.01
+output: ../artifacts/perturb/knockout10_seed2025

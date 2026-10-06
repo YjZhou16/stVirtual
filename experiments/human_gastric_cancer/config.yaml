@@ -1,0 +1,35 @@
+dataset: GP1
+data_root: data
+run_root: artifacts/results
+checkpoint_root: artifacts/checkpoints
+scanvi_dir: artifacts/checkpoints/scanvi
+lr_pairs_path: ../../lrpairs/human/LR_pairs.csv
+transition_prior_path: data/transition_prior.csv
+spatial_dimension: 2
+stage1_module: stvirtual.models.stage1_3d
+stage2_module: stvirtual.models.stage2_3d_transition
+latent_key: X_scanVI
+celltype_source_key: cluster
+decoder_checkpoint: artifacts/checkpoints/decoder/checkpoints/{src}_{tgt}.pt
+stage1_checkpoint: artifacts/checkpoints/stage1
+stage2_checkpoint: artifacts/checkpoints/stage2
+output_dir: artifacts/results/simulation
+stage1_loss:
+  uot_eps: 0.05
+  uot_tau: 0.5
+  uot_lam_x: 1.0
+  uot_lam_f: 0.001
+  lam_uot: 1.0
+stage2_loss:
+  rl_xy: 2.0
+  rl_z: 0.005
+boundary:
+  dimension: 2
+  alpha_factor: 0.35
+  target_frac: 0.99
+  expand0: 1.1
+  expand_step: 0.003
+  expand_max: 1.1
+  fallback_expand: 1.05
+  n_resample: 128
+  n_cache: 128
