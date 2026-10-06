@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this software when using stVirtual."
 type: software
 title: stVirtual
-version: v0.2.0
+version: v1.0.0
 url: https://github.com/YjZhou16/stVirtual
 license: MIT
 authors:
