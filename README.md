@@ -1,5 +1,7 @@
 # stVirtual
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23192164.svg)](https://doi.org/10.5281/zenodo.23192164)
+
 stVirtual, a niche-informed multi-agent generative framework for reconstructing intermediate tissue states in 3D and 4D and inferring population-level transitions from sparse measurements across space, time, and disease stages.
 
 ![stVirtual](Slogan.png)
