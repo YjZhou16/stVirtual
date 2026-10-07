@@ -1,0 +1,238 @@
+{
+  "genes": [
+    "Mbp",
+    "Pax6"
+  ],
+  "steps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "expression_scale": "log1p(CP10k)",
+  "decoder_checkpoint": "/home/zhouyj/stVirtual_revision/stVirtual_decoder_abl/results/mbrain_skip05/T168_to_T170/checkpoints/best.pt",
+  "decoder_sha256": "d6e189506868c584a4befe8958082bfe2986300f8472aeb32f8dadcf73bcd866",
+  "normalization_checkpoint": "/home/zhouyj/stVirtual_revision/R1/C2/results/raw/mbrain/mouse_T168_T171/T168_to_T170/stage1/residual/checkpoints/best.pt",
+  "normalization_sha256": "38cf2db46a150a798c81b5b4a90776785acfb2e4a62121d783a0ec21c03d8316",
+  "inference_only": true,
+  "matched_saved_middle_expression": true,
+  "source_variant": "full_model",
+  "decoder_implementation": "stVirtual_decoder_abl",
+  "training_rerun": false,
+  "frames": [
+    {
+      "step": 1,
+      "n_cells": 24054,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0001_t0p0500.h5ad",
+      "source_size": 3080737
+    },
+    {
+      "step": 2,
+      "n_cells": 24620,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0002_t0p1000.h5ad",
+      "source_size": 3147925
+    },
+    {
+      "step": 3,
+      "n_cells": 25186,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0003_t0p1500.h5ad",
+      "source_size": 3229499
+    },
+    {
+      "step": 4,
+      "n_cells": 25752,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0004_t0p2000.h5ad",
+      "source_size": 3308647
+    },
+    {
+      "step": 5,
+      "n_cells": 26317,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0005_t0p2500.h5ad",
+      "source_size": 3404047
+    },
+    {
+      "step": 6,
+      "n_cells": 26883,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0006_t0p3000.h5ad",
+      "source_size": 3466625
+    },
+    {
+      "step": 7,
+      "n_cells": 27448,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0007_t0p3500.h5ad",
+      "source_size": 3532924
+    },
+    {
+      "step": 8,
+      "n_cells": 28014,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0008_t0p4000.h5ad",
+      "source_size": 3607629
+    },
+    {
+      "step": 9,
+      "n_cells": 28580,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0009_t0p4500.h5ad",
+      "source_size": 3685030
+    },
+    {
+      "step": 10,
+      "n_cells": 29146,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0010_t0p5000.h5ad",
+      "source_size": 3778605
+    },
+    {
+      "step": 11,
+      "n_cells": 29712,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0011_t0p5500.h5ad",
+      "source_size": 3836597
+    },
+    {
+      "step": 12,
+      "n_cells": 30278,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0012_t0p6000.h5ad",
+      "source_size": 3905768
+    },
+    {
+      "step": 13,
+      "n_cells": 30844,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0013_t0p6500.h5ad",
+      "source_size": 3977866
+    },
+    {
+      "step": 14,
+      "n_cells": 31410,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0014_t0p7000.h5ad",
+      "source_size": 4050800
+    },
+    {
+      "step": 15,
+      "n_cells": 31977,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0015_t0p7500.h5ad",
+      "source_size": 4142685
+    },
+    {
+      "step": 16,
+      "n_cells": 32543,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0016_t0p8000.h5ad",
+      "source_size": 4208971
+    },
+    {
+      "step": 17,
+      "n_cells": 33111,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0017_t0p8500.h5ad",
+      "source_size": 4278236
+    },
+    {
+      "step": 18,
+      "n_cells": 33684,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0018_t0p9000.h5ad",
+      "source_size": 4366799
+    },
+    {
+      "step": 19,
+      "n_cells": 34271,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0019_t0p9500.h5ad",
+      "source_size": 4434249
+    },
+    {
+      "step": 20,
+      "n_cells": 34874,
+      "source": "/home/zhouyj/stVirtual_revision/R1/C2/results/rollouts/T168_to_T170/rollout_full_model_f0020_t1p0000.h5ad",
+      "source_size": 4528779,
+      "cache_sha256": "80b5e48a1c51c46b3f83b41d6be3c66e8ee4d851c076ee4d5f7476a6f59cc105"
+    }
+  ],
+  "real_endpoint": {
+    "sample": "T170",
+    "n_cells": 34874,
+    "cache": "real_T170.npz",
+    "cache_sha256": "45e7608e825d4c21b4003f2dc2ad8e0c14422ea2868ee45fafa1b0d97cead593",
+    "source": "/home/zhouyj/project/data/mouse/mouse.h5ad",
+    "source_size": 3568866990,
+    "source_mtime_ns": 1772090060113384240,
+    "sample_key": "obs/sample",
+    "expression_key": "layers/counts",
+    "coordinate_keys": [
+      "obs/cx_aligned",
+      "obs/cy_aligned"
+    ],
+    "normalization": "log1p(counts * 10000 / sum(counts over all input genes))",
+    "n_input_genes": 19547,
+    "zero_library_cells": 0,
+    "training_rerun": false
+  },
+  "visualization_normalization": {
+    "method": "min-max",
+    "scope": "each gene independently within each frame",
+    "formula": "(x - min(x)) / (max(x) - min(x))",
+    "range": [
+      0,
+      1
+    ],
+    "input_scale": "log1p(CP10k)",
+    "constant_gene_values": "all zeros",
+    "source_expression_caches_changed": false
+  },
+  "visualization_genes": [
+    "Mbp"
+  ],
+  "real_start": {
+    "sample": "T168",
+    "n_cells": 23487,
+    "cache": "real_T168.npz",
+    "cache_sha256": "3a4b0a0d43e23acc12e5f220e68cbdb68252b33c7f728d0e0af9be4d8b4cd845",
+    "source": "/home/zhouyj/project/data/mouse/mouse.h5ad",
+    "source_size": 3568866990,
+    "source_mtime_ns": 1772090060113384240,
+    "sample_key": "obs/sample",
+    "expression_key": "layers/counts",
+    "coordinate_keys": [
+      "obs/cx_aligned",
+      "obs/cy_aligned"
+    ],
+    "normalization": "log1p(counts * 10000 / sum(counts over all input genes))",
+    "n_input_genes": 19547,
+    "zero_library_cells": 0,
+    "training_rerun": false
+  },
+  "visualization_panel_order": [
+    "T168 real",
+    "Step 1",
+    "Step 2",
+    "Step 3",
+    "Step 4",
+    "Step 5",
+    "Step 6",
+    "Step 7",
+    "Step 8",
+    "Step 9",
+    "Step 10",
+    "Step 11",
+    "Step 12",
+    "Step 13",
+    "Step 14",
+    "Step 15",
+    "Step 16",
+    "Step 17",
+    "Step 18",
+    "Step 19",
+    "Step 20",
+    "T170 real"
+  ]
+}

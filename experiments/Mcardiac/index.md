@@ -1,6 +1,6 @@
 # Mcardiac
 
-Model E9.5h to E11.5h using XYZ coordinates. A transition map can be supplied or estimated with UOT.
+Use XYZ coordinates. Supply a transition prior, or estimate it with UOT.
 
 **Example route:** E9.5h to E11.5h.
 
@@ -16,7 +16,7 @@ Set paths in {download}`config.yaml <config.yaml>`. Paths are relative to this e
 
 `data/transition_prior.csv` provides the **prior cell-state transitions**. Each row maps `src_layer` (source cell type or state) to `tgt_layer` (target cell type or state); labels must match the experiment annotations. Set its path with `transition_prior_path` in `config.yaml`. See [Transition prior](../../docs/preprocessing.md#transition-prior).
 
-## Notebooks
+## Workflow
 
 ```{toctree}
 :maxdepth: 1

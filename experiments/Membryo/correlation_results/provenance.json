@@ -1,0 +1,46 @@
+{
+  "dataset": "Membryo",
+  "window": "E9.5_to_E11.5",
+  "middle": "E10.5",
+  "cluster_key": "annotation",
+  "n_clusters": 12,
+  "n_marker_slots": 60,
+  "n_unique_genes": 50,
+  "n_marker_slots_not_fdr05": 0,
+  "n_shared_marker_genes": 9,
+  "elapsed_seconds": 83.94854397606105,
+  "matrices": [
+    {
+      "n_cells": 18408,
+      "n_unique_genes": 50,
+      "n_constant_genes": 0,
+      "min_eigenvalue": 0.0669579328332963,
+      "matrix_symmetry": "PASS",
+      "dataset": "Membryo",
+      "window": "E9.5_to_E11.5",
+      "middle": "E10.5",
+      "method": "Real",
+      "path": "/home/zhouyj/project/data/MOSTA/processed/Mosta.h5ad",
+      "stored_scale": "counts",
+      "expression_key": "layers/count"
+    },
+    {
+      "n_cells": 18051,
+      "n_unique_genes": 50,
+      "n_constant_genes": 0,
+      "min_eigenvalue": 0.0006217685454286899,
+      "matrix_symmetry": "PASS",
+      "dataset": "Membryo",
+      "window": "E9.5_to_E11.5",
+      "middle": "E10.5",
+      "method": "stVirtual",
+      "path": "/home/zhouyj/stVirtual_revision/R1/C4/results/stVirtual/decoded_abl_20260823/E9.5_to_E11.5/E9.5_to_E11.5_f0010_t0p5000.h5ad",
+      "stored_scale": "counts",
+      "expression_key": "layers/reconstructed_expression"
+    }
+  ],
+  "reference_directory": "/home/zhouyj/stVirtual_revision/R3/C3/results/cluster_top5_gene_correlation_20261001/Membryo_E9.5_to_E11.5_E10.5",
+  "expression_scale": "log1p(CP10k)",
+  "correlation": "Pearson across cells",
+  "recomputed": false
+}

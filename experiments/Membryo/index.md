@@ -1,6 +1,6 @@
 # Membryo
 
-Preprocess all embryo timepoints together and align their centers to E16.5. The example reconstructs E9.5 to E11.5.
+Combine all timepoints. Align section centers to E16.5.
 
 **Example route:** E9.5 to E11.5.
 
@@ -12,7 +12,7 @@ Place Mouse_embryo_all_stage.h5ad with raw counts, timepoint, annotation, and sp
 
 Set paths in {download}`config.yaml <config.yaml>`. Paths are relative to this experiment folder.
 
-## Notebooks
+## Workflow
 
 ```{toctree}
 :maxdepth: 1

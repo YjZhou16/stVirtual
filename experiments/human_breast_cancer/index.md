@@ -1,6 +1,6 @@
 # Human breast cancer
 
-Use measured proteins and GASTON region labels directly, without scanVI, LR inputs, or an expression decoder.
+Use low-dimensional protein measurements directly. No scanVI or decoder is needed.
 
 **Example route:** Sections 0 to 14 in increments of 2.
 

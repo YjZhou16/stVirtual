@@ -27,7 +27,7 @@ data_root: data
 route_ids: [T168, T170]
 ```
 
-## 3. Run notebooks
+## 3. Workflow
 
 Open these notebooks locally with the **stvirtual** kernel, in this order:
 

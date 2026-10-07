@@ -1,6 +1,6 @@
 # Mcardiac_EA
 
-Prepare Slide-seq tissue regions. Training saves the files needed for epicardial ablation.
+Use Slide-seq tissue regions for epicardial cell removal.
 
 **Example route:** E10.5_CD1 to E12.5_CD1.
 
@@ -16,7 +16,7 @@ Set paths in {download}`config.yaml <config.yaml>`. Paths are relative to this e
 
 `transition_prior.csv` provides the **prior cell-state transitions**. Each row maps `src_layer` (source cell type or state) to `tgt_layer` (target cell type or state); labels must match the experiment annotations. Set its path with `transition_prior_path` in `config.yaml`. See [Transition prior](../../docs/preprocessing.md#transition-prior).
 
-## Notebooks
+## Workflow
 
 Run preprocessing, decoder training, then transport training.
 

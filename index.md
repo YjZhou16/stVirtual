@@ -21,14 +21,14 @@ docs/runtime-and-resources
 :maxdepth: 1
 :caption: Data workflow
 
+experiments/Mcardiac/index
+experiments/Membryo/index
+experiments/human_gastric_cancer/index
+experiments/human_lung_cancer/index
 experiments/Mbrain/index
 experiments/HMLN/index
 experiments/human_breast_cancer/index
-experiments/Membryo/index
 experiments/Mcardiac_EA/index
-experiments/human_lung_cancer/index
-experiments/human_gastric_cancer/index
-experiments/Mcardiac/index
 docs/your-data
 ```
 

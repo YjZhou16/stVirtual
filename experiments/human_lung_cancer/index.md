@@ -1,6 +1,6 @@
 # Human lung cancer
 
-Model AAH to LUAD with clone labels. Shared cell features guide coordinate alignment.
+Align coordinates using shared cell features.
 
 **Example route:** AAH to LUAD.
 
@@ -16,7 +16,7 @@ Set paths in {download}`config.yaml <config.yaml>`. Paths are relative to this e
 
 `data/transition_prior.csv` provides the **prior cell-state transitions**. Each row maps `src_layer` (source cell type or state) to `tgt_layer` (target cell type or state); labels must match the experiment annotations. Set its path with `transition_prior_path` in `config.yaml`. See [Transition prior](../../docs/preprocessing.md#transition-prior).
 
-## Notebooks
+## Workflow
 
 ```{toctree}
 :maxdepth: 1

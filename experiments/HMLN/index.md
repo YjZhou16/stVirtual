@@ -1,6 +1,6 @@
 # HMLN
 
-Use sections S1-S3 to reconstruct S1 to S3 with 10 simulation steps.
+Use sections S1–S3.
 
 **Example route:** S1 to S3.
 
@@ -12,7 +12,7 @@ Place `raw/Reconstructed_S2.h5ad`, `raw/Reconstructed_S3.h5ad`, and `raw/Reconst
 
 Set paths in {download}`config.yaml <config.yaml>`. Paths are relative to this experiment folder.
 
-## Notebooks
+## Workflow
 
 ```{toctree}
 :maxdepth: 1

@@ -1,0 +1,167 @@
+{
+  "source_notebook": "/home/zhouyj/project/src/heart_9_11/lr_ana/deg copy.ipynb",
+  "source_notebook_sha256": "ac339b5cdd6b07519d4d0bb7329487e5e0a5f405ca60c36210db3325b9e09080",
+  "frame_directory": "/home/zhouyj/project/src/heart_9_11_results/ds_ana/counts_lr",
+  "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "pairs": [
+    "Cdh2|Cdh2",
+    "Hspg2|Dag1",
+    "Negr1|Negr1",
+    "Wnt11|Fzd1"
+  ],
+  "source_frame": 5,
+  "fate_rule": "first_change",
+  "source_cell_type": "LV/atrioventricular canal/common atrium cardiomyocytes",
+  "scale": "Per pair, clip pooled scores at 1st and 99th percentiles and scale to [0,1]",
+  "source_files": [
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0000_t0p0000.h5ad",
+      "size": 371976720,
+      "mtime_ns": 1775116507948844568
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0001_t0p0500.h5ad",
+      "size": 375049162,
+      "mtime_ns": 1775116508647571054
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0002_t0p1000.h5ad",
+      "size": 378113386,
+      "mtime_ns": 1775116509527185687
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0003_t0p1500.h5ad",
+      "size": 381181170,
+      "mtime_ns": 1775116510960982702
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0004_t0p2000.h5ad",
+      "size": 384245802,
+      "mtime_ns": 1775116512388948607
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0005_t0p2500.h5ad",
+      "size": 387301680,
+      "mtime_ns": 1775116513860691613
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0006_t0p3000.h5ad",
+      "size": 390345090,
+      "mtime_ns": 1775116515301550608
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0007_t0p3500.h5ad",
+      "size": 393359558,
+      "mtime_ns": 1775116516708484091
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0008_t0p4000.h5ad",
+      "size": 396357462,
+      "mtime_ns": 1775116518273248648
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0009_t0p4500.h5ad",
+      "size": 399355366,
+      "mtime_ns": 1775116519837570279
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0010_t0p5000.h5ad",
+      "size": 402320142,
+      "mtime_ns": 1775116521270933693
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0011_t0p5500.h5ad",
+      "size": 405251700,
+      "mtime_ns": 1775116522793212192
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0012_t0p6000.h5ad",
+      "size": 408154406,
+      "mtime_ns": 1775116524320638034
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0013_t0p6500.h5ad",
+      "size": 411052926,
+      "mtime_ns": 1775116525846366074
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0014_t0p7000.h5ad",
+      "size": 413943164,
+      "mtime_ns": 1775116527290696785
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0015_t0p7500.h5ad",
+      "size": 416808556,
+      "mtime_ns": 1775116528745254579
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0016_t0p8000.h5ad",
+      "size": 419628352,
+      "mtime_ns": 1775116530258308293
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0017_t0p8500.h5ad",
+      "size": 422373700,
+      "mtime_ns": 1775116531839600154
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0018_t0p9000.h5ad",
+      "size": 425052792,
+      "mtime_ns": 1775116533424850772
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0019_t0p9500.h5ad",
+      "size": 427702852,
+      "mtime_ns": 1775116535134644922
+    },
+    {
+      "name": "counts_pred_sample_E9.5h_to_E11.5h_f0020_t1p0000.h5ad",
+      "size": 430518462,
+      "mtime_ns": 1775116536644418997
+    }
+  ],
+  "scale_limits": {
+    "Cdh2|Cdh2": [
+      1.658019027672708e-05,
+      0.24443645775318146
+    ],
+    "Hspg2|Dag1": [
+      0.0006304362905211747,
+      0.41084685921669006
+    ],
+    "Negr1|Negr1": [
+      0.002031544456258416,
+      0.22566677629947662
+    ],
+    "Wnt11|Fzd1": [
+      0.0004355016862973571,
+      0.23457872867584229
+    ]
+  },
+  "n_rows": 45060,
+  "boxplot_groups": 168,
+  "reran_training": false,
+  "reran_simulation": false
+}

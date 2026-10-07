@@ -1,0 +1,5 @@
+pair_idx,pair_name,ligand,receptor,KL,KR,nH
+0,Wnt11|Fzd1,Wnt11,Fzd1,0.18737935,0.7109985,2.0
+1,Hspg2|Dag1,Hspg2,Dag1,3.2146714,10.107302,2.0
+2,Cdh2|Cdh2,Cdh2,Cdh2,25.454191,25.454191,2.0
+3,Negr1|Negr1,Negr1,Negr1,0.3000969,0.3000969,2.0
