@@ -64,4 +64,4 @@ Data sources, required files, and local folders are listed in the **Input data**
 
 ## Citation
 
-Yijin Zhou, ..., Chunman Zuo. Reconstructing tissue-state transitions and enabling in silico perturbation from spatial omics through niche-informed multi-agent learning. Under review (2026).
+Yijin Zhou, ..., Luonan Chen*, Chunman Zuo*. Reconstructing tissue-state transitions and enabling in silico perturbation from spatial omics through niche-informed multi-agent learning. Under review (2026).
