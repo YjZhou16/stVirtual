@@ -1,0 +1,67 @@
+{
+  "source_notebook": "/home/zhouyj/project/src/GP1/dsana copy 2.ipynb",
+  "source_notebook_sha256": "2eab617d47dd549b64f53793acc4327e578fd807f33ccf434aa4e60d37274da4",
+  "source_cells": [
+    22,
+    25,
+    32
+  ],
+  "module_genes": [
+    "AKR1B10",
+    "LCN2",
+    "LGR4",
+    "CAPN8",
+    "COL3A1",
+    "SLC5A5",
+    "RNASE1"
+  ],
+  "module_score": "mean(log1p(counts)), across the seven genes",
+  "virtual_layer": "counts_hat",
+  "real_layer": "counts",
+  "initial_layers_excluded": [
+    "6",
+    "9"
+  ],
+  "normal_cell_filter": "is_diff=True and finite diff_alpha",
+  "alpha_bin_edges": [
+    0.069,
+    0.1521,
+    0.3623,
+    0.5268,
+    0.673,
+    0.7918,
+    0.893
+  ],
+  "js_histogram_bins": 60,
+  "js_base": 2,
+  "cached_outputs_verified": true,
+  "density_bin": "0.53-0.59",
+  "density_n": [
+    89,
+    40
+  ],
+  "mann_whitney_two_sided_p": 0.08476851055018368,
+  "lineage_paths": 53,
+  "sankey_copied_from_saved_plotly_output": true,
+  "sankey_node_labels": [
+    "7",
+    "8",
+    "12",
+    "6",
+    "9",
+    "7",
+    "12",
+    "8",
+    "1",
+    "6",
+    "9",
+    "Apoptosis",
+    "7",
+    "12",
+    "8"
+  ],
+  "apoptosis_label_used": true,
+  "raw_frames_directory": "/home/zhouyj/project/src/GP1_results/ds_ana/counts_MLP",
+  "real_input": "/home/zhouyj/project/data/GP1/GP1/processed/GP1_with_metadata.h5ad",
+  "models_retrained": false
+}

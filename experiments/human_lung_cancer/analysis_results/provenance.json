@@ -1,0 +1,38 @@
+{
+  "source_notebook": "/home/zhouyj/project/src/luad/enrich.ipynb",
+  "source_notebook_sha256": "3edd492e80951cea853dcaee38dd52379b6c989e41382227f34dad9fa89589aa",
+  "source_figure_cells": [
+    35,
+    38
+  ],
+  "curve_input": "/home/zhouyj/project/src/luad/diag_piecewise_fit.csv",
+  "curve_input_sha256": "23febd3f31a9f607ba80d8554d047c0655de2ec7016726ee489d2c88923f5be6",
+  "curve_threshold": 0.6,
+  "curve_strict_greater_than": true,
+  "curve_only_diff": false,
+  "curve_denominator": "All cells with nonmissing diff_alpha at each simulation step",
+  "first_positive_t": 4,
+  "piecewise_split_t": 18,
+  "smooth": 5,
+  "min_plateau_len": 15,
+  "deg_input": "/home/zhouyj/project/src/luad/ds_ana/DEG4_6.csv",
+  "deg_input_sha256": "a084c3d6ac1eadb4f42f52166df142bea15e2fac5b1514266b642fc1e1b8d477",
+  "deg_table_matches_source_top20_and_saved_significant_tables": true,
+  "deg_windows": {
+    "14-18": 521,
+    "19-23": 629
+  },
+  "deg_only_diff": true,
+  "deg_layer": "counts_hat",
+  "deg_transform": "log1p(counts_hat)",
+  "deg_method": "Wilcoxon, Scanpy rank_genes_groups default BH correction",
+  "deg_test_group": "19-23",
+  "deg_reference_group": "14-18",
+  "deg_logfc_cut": 0.25,
+  "deg_adjusted_p_cut": 0.05,
+  "deg_gene_count": 18085,
+  "up_genes": 527,
+  "down_genes": 227,
+  "training_repeated": false,
+  "original_spatial_outputs_preserved": true
+}

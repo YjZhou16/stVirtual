@@ -1,0 +1,62 @@
+{
+  "metric": "log1p(mean(CP10k))",
+  "dataset": "HMLN",
+  "source_window": "S2_to_S4",
+  "source_middle": "S3",
+  "display_window": "S1 to S3",
+  "display_middle": "S2",
+  "methods": [
+    "Real",
+    "stVirtual"
+  ],
+  "n_genes": 28943,
+  "all_genes_and_zero_values_retained": true,
+  "source_table": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001/per_gene/HMLN_S2_to_S4_S3_log_of_mean.csv.gz",
+  "source_table_sha256": "ccc7aa7c99b15d569130fdcf13804f957f802351017abb0866c9682f7cd27a8c",
+  "cached_table_sha256": "e50c65cd9343b50e468b05f5d1a13903090298f4d3aa3965bcb4cbffc66db2cd",
+  "source_evaluation": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001",
+  "recomputed_expression": false,
+  "axis_limits": [
+    -0.15,
+    0.75
+  ],
+  "kde_bandwidth": "scott",
+  "kde_tail_bandwidths": 2,
+  "colors": {
+    "Real": "#BDBDBD",
+    "stVirtual": "#CD3333"
+  },
+  "inputs": [
+    {
+      "dataset": "HMLN",
+      "window": "S2_to_S4",
+      "middle": "S3",
+      "method": "Real",
+      "path": "/home/zhouyj/project/data/openst/processed/openst.h5ad",
+      "expression_key": "layers/raw",
+      "stored_scale": "counts",
+      "obs_key": "sample",
+      "scale_evidence": "Original count layer from dataset configuration",
+      "file_size": 2822842110,
+      "mtime_ns": 1768809617506876941
+    },
+    {
+      "dataset": "HMLN",
+      "window": "S2_to_S4",
+      "middle": "S3",
+      "method": "stVirtual",
+      "path": "/home/zhouyj/stVirtual_revision/R1/C2/results/raw/openst/openst_S2_S4/S2_to_S4/decoded_counts_abl/full_model_f0005_t0p5000.h5ad",
+      "expression_key": "layers/reconstructed_expression",
+      "stored_scale": "counts",
+      "obs_key": null,
+      "scale_evidence": "uns/expression_scale = negative_binomial_expected_counts; X is an empty placeholder",
+      "file_size": 4472021791,
+      "mtime_ns": 1787557489115198154
+    }
+  ],
+  "sample_mapping": {
+    "S2": "S1",
+    "S3": "S2",
+    "S4": "S3"
+  }
+}

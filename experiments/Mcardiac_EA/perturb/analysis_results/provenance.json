@@ -1,0 +1,52 @@
+{
+  "sources": [
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_consistency/fibroblast_deg_topn_consistency_by_seed.csv",
+      "sha256": "a7c824c62906b5f2e94b2050be96ec0834a98b15aa8a7dde3096253367be0974",
+      "local": "metrics_by_seed.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_consistency/composition_consistency_by_seed.csv",
+      "sha256": "aba9b3d6819d9a9b2b1c8db09337f41daf875df47e7add853f2c98043881554f",
+      "local": "metrics_by_seed.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_locality_figures_normalized/Fig1.csv",
+      "sha256": "2f65d3ab8cc3a6a2e3b7bab2c358b2343e1be8de81e6da7177ef2d2fb2678bdd",
+      "local": "Fig1.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_locality_figures_normalized/Fig2.csv",
+      "sha256": "8ba431f2a6b8103a4ee70242b89ab31a4e272778ce94e1d788b156a451bd7457",
+      "local": "Fig2.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_locality_figures_normalized/Fig3.csv",
+      "sha256": "72d5768c7c8c3951029efc5bd928125046edc0d323031b5fc51cfa1978dfffd6",
+      "local": "Fig3.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/gain1p2_locality_figures_normalized/Fig_statistics.csv",
+      "sha256": "ef04b9bb1d965ef8649c7855a7903845eee9a95af5890562abc9fb8da00066a8",
+      "local": "Fig_statistics.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps_online_lr_lineage_epi_to_fibroblast/counterfactual_wt1_partial_04_lineage_hybrid_mp3_gain1p2_seed2026/ablation_targets.csv",
+      "sha256": "2b0086269ea747bd02e61731c55571b361d74aaa89b22d6f2c3d839cffabf46f",
+      "local": "deleted_ep_coordinates.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R3/C4/alignment/model2d_results_20steps/stage1_trace.npz",
+      "sha256": "49ffe72e626d0d13a2bad5b621ac565fa3b3314b2ce9cbbf6289292ef9215bbd",
+      "local": "deleted_ep_coordinates.csv"
+    }
+  ],
+  "operation": "Read saved results only; no training or simulation executed.",
+  "plot_programs": [
+    "/home/zhouyj/stVirtual_revision/R3/C4/alignment/plot_gain1p2_multiseed_boxplots.py",
+    "/home/zhouyj/stVirtual_revision/R3/C4/alignment/make_gain1p2_locality_figure_set.py"
+  ],
+  "figure_outputs": 4,
+  "notebook": "../results.ipynb",
+  "execution": "Passed; existing workflow notebooks unchanged."
+}

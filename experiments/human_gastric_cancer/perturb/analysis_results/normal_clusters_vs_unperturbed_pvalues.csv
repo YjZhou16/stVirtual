@@ -1,0 +1,5 @@
+group,clusters,reference_fraction_percent,comparison_fraction_percent,alternative,mannwhitney_u,pvalue,significance,n_reference,n_comparison
+normal,8/12,0,20,comparison_greater_than_0_percent,9379661.5,4.857103930799573e-11,****,1618,12861
+normal,8/12,0,40,comparison_greater_than_0_percent,6511244.0,5.265475639245055e-38,****,1618,10041
+normal,8/12,0,60,comparison_greater_than_0_percent,4710578.0,2.1410257370832583e-88,****,1618,8459
+normal,8/12,0,80,comparison_greater_than_0_percent,3160410.0,3.623804456505795e-149,****,1618,6685

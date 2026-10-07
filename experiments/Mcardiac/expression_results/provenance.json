@@ -1,0 +1,95 @@
+{
+  "dataset": "Mcardiac",
+  "saved_analysis_results": true,
+  "recomputed_expression_or_lr": false,
+  "marker": {
+    "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "simulation_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "real_endpoint_frame": 21,
+    "real_endpoint": "E11.5h",
+    "row_scaled_range": [
+      0,
+      1
+    ],
+    "display_interpolation": "PCHIP, factor 12; display only",
+    "source_plot_code": "/home/zhouyj/stVirtual_revision/R1/C3/heart_stat/stvirtual_marker_heatmap_data/code/plot_marker_heatmap_notebook_style_all_current_lv.py"
+  },
+  "lr": {
+    "source_notebook": "/home/zhouyj/project/src/heart_9_11/lr_ana/deg copy.ipynb",
+    "source_plot_cell": 24,
+    "source_frame": 5,
+    "group1_future_fate": "Ventricular cardiomyocytes",
+    "group2_future_fate": "Atrial cardiomyocytes",
+    "top_n_per_group": 15,
+    "x": "score_up",
+    "size": "abs_log2fc",
+    "color": "dominant_mean",
+    "filters": {
+      "fdr_max": 0.05,
+      "abs_log2fc_min": 1.0,
+      "min_cells_per_group": 10,
+      "dominant_mean_min": 0.01
+    }
+  },
+  "source_sha256": {
+    "/home/zhouyj/stVirtual_revision/R1/C3/heart_stat/stvirtual_marker_heatmap_data/heatmap_frame_cellnorm_layermean_all_current_lv.csv": "d3b5d2f7803c90c8317247dd2901c101c6bc914dbdbe5df54f47e8b1049c2bb3",
+    "/home/zhouyj/stVirtual_revision/R1/C3/heart_stat/stvirtual_marker_heatmap_data/heatmap_traj_scaled_0_1_all_current_lv.csv": "d50ffbdac36fbb5d68b02ddc09ee30260f0f6a82baab4b83f381252d5d7faf41",
+    "/home/zhouyj/project/src/heart_9_11/lr_ana/g1_specific_up_clean.csv": "a05ce801630c7c86e9193e97f556688d9c4947201e61772da74284e62cad00eb",
+    "/home/zhouyj/project/src/heart_9_11/lr_ana/g2_specific_up_clean.csv": "5e629ea8e25b2bcd68b06be9e1802afb82f61c1723bd5b17403a224de035c913",
+    "/home/zhouyj/stVirtual_revision/R1/C3/heart_stat/stvirtual_marker_heatmap_data/marker_heatmap_frame_0_21_all.png": "d7437f30f3c6ed6003a82fd4fb8c764a429da8c4d40b370a328c5c8a8dba2295",
+    "/home/zhouyj/project/src/heart_9_11/lr_ana/specific_up_bubble_blues_reds_transparent.png": "b2785eca54cdbfecdc8d8d06780f653afad5d0be760fcc313e696bcd1be38e56"
+  },
+  "cache_sha256": {
+    "heatmap_frame_cellnorm_layermean_all_current_lv.csv": "d3b5d2f7803c90c8317247dd2901c101c6bc914dbdbe5df54f47e8b1049c2bb3",
+    "heatmap_traj_scaled_0_1_all_current_lv.csv": "d50ffbdac36fbb5d68b02ddc09ee30260f0f6a82baab4b83f381252d5d7faf41",
+    "g1_specific_up_clean.csv": "a05ce801630c7c86e9193e97f556688d9c4947201e61772da74284e62cad00eb",
+    "g2_specific_up_clean.csv": "5e629ea8e25b2bcd68b06be9e1802afb82f61c1723bd5b17403a224de035c913"
+  },
+  "text_color": "white",
+  "notebook_background": "#111111"
+}

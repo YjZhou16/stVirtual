@@ -8,6 +8,9 @@ Suppress selected gene expression in AAH cells only. The LUAD reference and gene
 :maxdepth: 1
 
 perturb
+results
 ```
 
 - {download}`perturb.ipynb <perturb.ipynb>`
+
+- {download}`results.ipynb <results.ipynb>`

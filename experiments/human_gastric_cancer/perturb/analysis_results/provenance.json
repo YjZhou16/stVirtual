@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R2/C9/results/GP1/GP1_comment9_repeats10/plots_dose_response/normal_clusters_boxplot_data.csv",
+      "sha256": "d0f5ab82302c6a9027b00ce6e9e9fb21f77907b1afb83f5deb6af9ada746c4cc",
+      "local": "normal_clusters_boxplot_data.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R2/C9/results/GP1/GP1_comment9_repeats10/plots_dose_response/normal_clusters_vs_unperturbed_pvalues.csv",
+      "sha256": "73b6de2b567d5b7c2b16e63917f347b2c27c8654a206fede83aa862f24a22523",
+      "local": "normal_clusters_vs_unperturbed_pvalues.csv"
+    }
+  ],
+  "operation": "Read saved results only; no training or simulation executed.",
+  "plot_programs": [
+    "/home/zhouyj/stVirtual_revision/R2/C9/supplementary/plot_gp1_removal_trends.py"
+  ],
+  "figure_outputs": 1,
+  "notebook": "../results.ipynb",
+  "execution": "Passed; existing workflow notebooks unchanged."
+}

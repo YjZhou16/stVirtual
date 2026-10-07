@@ -8,8 +8,11 @@ Complete [baseline training](../index.md) to generate the manifest. Configure fr
 :maxdepth: 1
 
 perturb
+results
 ```
 
 - {download}`perturb.ipynb <perturb.ipynb>`
 - {download}`simulation.py <simulation.py>`
 - {download}`run.py <run.py>` for the configured batch
+
+- {download}`results.ipynb <results.ipynb>`

@@ -1,0 +1,57 @@
+{
+  "metric": "log1p(mean(CP10k))",
+  "dataset": "Mbrain",
+  "source_window": "T168_to_T170",
+  "source_middle": "T169",
+  "display_window": "T168 to T170",
+  "display_middle": "T169",
+  "methods": [
+    "Real",
+    "stVirtual"
+  ],
+  "n_genes": 19547,
+  "all_genes_and_zero_values_retained": true,
+  "source_table": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001/per_gene/Mbrain_T168_to_T170_T169_log_of_mean.csv.gz",
+  "source_table_sha256": "29148e71653afc647ae00cd923ff98accdea8264d13787665cf0c68a0bdb1aa9",
+  "cached_table_sha256": "eaa24b3935ad3fa003148ef9b44cf556cc1904b15969cf53d4dd495b97647208",
+  "source_evaluation": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001",
+  "recomputed_expression": false,
+  "axis_limits": [
+    -0.15,
+    1.25
+  ],
+  "kde_bandwidth": "scott",
+  "kde_tail_bandwidths": 2,
+  "colors": {
+    "Real": "#BDBDBD",
+    "stVirtual": "#CD3333"
+  },
+  "inputs": [
+    {
+      "dataset": "Mbrain",
+      "window": "T168_to_T170",
+      "middle": "T169",
+      "method": "Real",
+      "path": "/home/zhouyj/project/data/mouse/mouse.h5ad",
+      "expression_key": "layers/counts",
+      "stored_scale": "counts",
+      "obs_key": "sample",
+      "scale_evidence": "Original count layer from dataset configuration",
+      "file_size": 3568866990,
+      "mtime_ns": 1772090060113384240
+    },
+    {
+      "dataset": "Mbrain",
+      "window": "T168_to_T170",
+      "middle": "T169",
+      "method": "stVirtual",
+      "path": "/home/zhouyj/stVirtual_revision/R1/C2/results/raw/mbrain/decoded_abl/T168_to_T170/full_model_f0010_t0p5000.h5ad",
+      "expression_key": "layers/reconstructed_expression",
+      "stored_scale": "counts",
+      "obs_key": null,
+      "scale_evidence": "uns/expression_scale = negative_binomial_expected_counts; X is an empty placeholder",
+      "file_size": 1362745334,
+      "mtime_ns": 1787540379040547809
+    }
+  ]
+}

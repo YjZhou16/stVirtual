@@ -8,6 +8,9 @@ Remove source normal cells selected by high ALDH3A1 expression, then run simulat
 :maxdepth: 1
 
 perturb
+results
 ```
 
 - {download}`perturb.ipynb <perturb.ipynb>`
+
+- {download}`results.ipynb <results.ipynb>`

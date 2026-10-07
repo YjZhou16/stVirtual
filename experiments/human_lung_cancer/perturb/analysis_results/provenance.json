@@ -1,0 +1,38 @@
+{
+  "sources": [
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R2/C9/results/LUAD/comment9/dose_response_boxplot_data.csv",
+      "sha256": "68c5bb527a460613dc6ce0c36526c2cc80c57478ffea241c78bfbfff5a754d27",
+      "local": "dose_response.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R2/C9/results/LUAD/comment9/dose_response.csv",
+      "sha256": "a399e3c7cf7bb7507fe3d329542f2b5b07fa21db7208b6c79bb1705cb6fa595d",
+      "local": "dose_response.csv"
+    },
+    {
+      "source": "/home/zhouyj/stVirtual_revision/R2/C9/results/LUAD/comment9/expression_mean_matched_100seeds/expression_matched_random/knockdown_100/all_runs_overview.csv",
+      "sha256": "7451a8eaa1c09552ba6abf28afa4623124721d0891194a769448ceed4260d412",
+      "local": "expression_matched_null.csv"
+    }
+  ],
+  "operation": "Read saved results only; no training or simulation executed.",
+  "plot_programs": [
+    "/home/zhouyj/stVirtual_revision/R2/C9/supplementary/analyze_plateau_t_distribution.py"
+  ],
+  "figure_outputs": 2,
+  "notebook": "../results.ipynb",
+  "execution": "Passed; existing workflow notebooks unchanged.",
+  "knockdown_strength": {
+    "fractions": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "order": "within each gene count in the user-selected CSV",
+    "legend": "Knockdown strength",
+    "x_label": "Number of knocked-down genes"
+  }
+}

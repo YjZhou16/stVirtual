@@ -1,0 +1,57 @@
+{
+  "metric": "log1p(mean(CP10k))",
+  "dataset": "Membryo",
+  "source_window": "E9.5_to_E11.5",
+  "source_middle": "E10.5",
+  "display_window": "E9.5 to E11.5",
+  "display_middle": "E10.5",
+  "methods": [
+    "Real",
+    "stVirtual"
+  ],
+  "n_genes": 23761,
+  "all_genes_and_zero_values_retained": true,
+  "source_table": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001/per_gene/Membryo_E9.5_to_E11.5_E10.5_log_of_mean.csv.gz",
+  "source_table_sha256": "a1c1a3ec808e11d1aadc9349f5edc7baa292e26556dbf7defde177ae5232ca6f",
+  "cached_table_sha256": "ddf8f957e04b3e25f4eac3fec0890a535614a54efbd98455dcd0de1ad54d8a0f",
+  "source_evaluation": "/home/zhouyj/stVirtual_revision/R3/C3/results/complete_8_windows/log_of_mean_20261001",
+  "recomputed_expression": false,
+  "axis_limits": [
+    -0.15,
+    1.0
+  ],
+  "kde_bandwidth": "scott",
+  "kde_tail_bandwidths": 2,
+  "colors": {
+    "Real": "#BDBDBD",
+    "stVirtual": "#CD3333"
+  },
+  "inputs": [
+    {
+      "dataset": "Membryo",
+      "window": "E9.5_to_E11.5",
+      "middle": "E10.5",
+      "method": "Real",
+      "path": "/home/zhouyj/project/data/MOSTA/processed/Mosta.h5ad",
+      "expression_key": "layers/count",
+      "stored_scale": "counts",
+      "obs_key": "timepoint",
+      "scale_evidence": "Original counts layer",
+      "file_size": 23219377877,
+      "mtime_ns": 1772596606461601276
+    },
+    {
+      "dataset": "Membryo",
+      "window": "E9.5_to_E11.5",
+      "middle": "E10.5",
+      "method": "stVirtual",
+      "path": "/home/zhouyj/stVirtual_revision/R1/C4/results/stVirtual/decoded_abl_20260823/E9.5_to_E11.5/E9.5_to_E11.5_f0010_t0p5000.h5ad",
+      "expression_key": "layers/reconstructed_expression",
+      "stored_scale": "counts",
+      "obs_key": null,
+      "scale_evidence": "uns/expression_scale = negative_binomial_expected_counts",
+      "file_size": 982180102,
+      "mtime_ns": 1787553909074331596
+    }
+  ]
+}
